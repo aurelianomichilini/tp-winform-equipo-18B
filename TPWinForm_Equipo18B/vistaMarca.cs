@@ -83,5 +83,33 @@ namespace TPWinForm_Equipo18B
                 MessageBox.Show("Error al eliminar: " + ex.Message);
             }
         }
+
+        private void btn_editar_marca_Click(object sender, EventArgs e)
+        {
+            
+
+
+            MarcaNegocio negocio = new MarcaNegocio();
+
+            try
+            {
+                if (DGV_Marca.CurrentRow != null)
+                {
+                    marca seleccionada = (marca)DGV_Marca.CurrentRow.DataBoundItem;
+                    editarMarca ventana = new editarMarca(seleccionada);
+                    ventana.ShowDialog();
+                    CargarMarcas();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccioná una marca primero");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar: " + ex.Message);
+            }
+            
+        }
     }
 }

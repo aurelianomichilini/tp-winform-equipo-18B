@@ -12,6 +12,7 @@ namespace Negocio
     {
 
 
+
         public List<marca> listarMarcas()
         {
             List<marca> lista = new List<marca>();
@@ -73,7 +74,28 @@ namespace Negocio
                 datos.setParameter("@Id", id);
                 datos.executeAction();
             }
-            catch (Exception)
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+
+        public void editarMarca(marca marca)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("UPDATE MARCAS SET Descripcion = @Descripcion WHERE Id = @Id");
+                datos.setParameter("@Descripcion", marca.descripcion);
+                datos.setParameter("@Id", marca.id);
+                datos.executeAction();
+            }
+            catch (Exception ex)
             {
                 throw;
             }

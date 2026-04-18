@@ -64,6 +64,7 @@
             this.btn_editar_marca.TabIndex = 2;
             this.btn_editar_marca.Text = "Editar";
             this.btn_editar_marca.UseVisualStyleBackColor = true;
+            this.btn_editar_marca.Click += new System.EventHandler(this.btn_editar_marca_Click);
             // 
             // btn_eliminar_marca
             // 
