@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Dominio;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,8 @@ namespace TPWinForm_Equipo18B
 
         private void vistaMarca_Load(object sender, EventArgs e)
         {
+            DGV_Marca.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGV_Marca.MultiSelect = false;
             CargarMarcas();
         }
 
@@ -45,6 +48,40 @@ namespace TPWinForm_Equipo18B
 
             ventana.ShowDialog();
             CargarMarcas();
+        }
+
+        private void btn_eliminar_marca_Click(object sender, EventArgs e)
+        {
+            MarcaNegocio negocio = new MarcaNegocio();
+
+            try
+            {
+                if (DGV_Marca.CurrentRow != null)
+                {
+                    marca seleccionada = (marca)DGV_Marca.CurrentRow.DataBoundItem;
+
+                    DialogResult respuesta = MessageBox.Show(
+                        "¿Querés eliminar la marca seleccionada?",
+                        "Eliminar",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        negocio.eliminarMarca(seleccionada.id);
+                        MessageBox.Show("Marca eliminada correctamente");
+                        CargarMarcas();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccioná una marca primero");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar: " + ex.Message);
+            }
         }
     }
 }

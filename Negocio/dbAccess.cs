@@ -42,6 +42,7 @@ namespace Negocio
 
         public void setQuery(string query)
         {
+            command.Parameters.Clear();
             command.CommandType = System.Data.CommandType.Text;
             command.CommandText = query;
         }
@@ -74,6 +75,10 @@ namespace Negocio
             {
                 throw ex;
             }
+        }
+        public void setParameter(string nombre, object valor)
+        {
+            command.Parameters.AddWithValue(nombre, valor);
         }
 
         public void closeConnection()

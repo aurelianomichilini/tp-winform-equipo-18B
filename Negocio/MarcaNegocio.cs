@@ -63,5 +63,25 @@ namespace Negocio
             }
         }
 
+        public void eliminarMarca(int id)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("DELETE FROM MARCAS WHERE Id = @Id");
+                datos.setParameter("@Id", id);
+                datos.executeAction();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+
     }
 }

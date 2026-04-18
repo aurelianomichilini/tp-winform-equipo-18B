@@ -73,6 +73,7 @@
             this.btn_eliminar_marca.TabIndex = 3;
             this.btn_eliminar_marca.Text = "Eliminar";
             this.btn_eliminar_marca.UseVisualStyleBackColor = true;
+            this.btn_eliminar_marca.Click += new System.EventHandler(this.btn_eliminar_marca_Click);
             // 
             // txt_buscar_marca
             // 
