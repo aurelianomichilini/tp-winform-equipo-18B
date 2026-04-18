@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Negocio
@@ -43,7 +44,24 @@ namespace Negocio
             }
         }
 
+        public void agregarMarca(marca nueva)
+        {
+            dbAccess datos = new dbAccess();
 
+            try
+            {
+                datos.setQuery("INSERT INTO MARCAS (Descripcion) VALUES ('" + nueva.descripcion + "')");
+                datos.executeAction();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
 
     }
 }

@@ -38,5 +38,13 @@ namespace TPWinForm_Equipo18B
         {
             CargarMarcas();
         }
+
+        private void btn_add_marca_Click(object sender, EventArgs e)
+        {
+            agregarMarca ventana = new agregarMarca();
+
+            ventana.ShowDialog();
+            CargarMarcas();
+        }
     }
 }

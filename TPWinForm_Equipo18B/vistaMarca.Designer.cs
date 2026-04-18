@@ -54,6 +54,7 @@
             this.btn_add_marca.TabIndex = 1;
             this.btn_add_marca.Text = "Agregar";
             this.btn_add_marca.UseVisualStyleBackColor = true;
+            this.btn_add_marca.Click += new System.EventHandler(this.btn_add_marca_Click);
             // 
             // btn_editar_marca
             // 
