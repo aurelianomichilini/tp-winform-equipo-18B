@@ -36,5 +36,13 @@ namespace TPWinForm_Equipo18B
         {
 
         }
+
+        private void btn_irMarcas_Click(object sender, EventArgs e)
+        {
+            vistaMarca ventana = new vistaMarca();
+            this.Hide();
+            ventana.ShowDialog();
+            this.Show();
+        }
     }
 }
