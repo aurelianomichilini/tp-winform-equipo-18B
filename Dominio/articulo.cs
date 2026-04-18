@@ -8,6 +8,8 @@ namespace Dominio
 {
     public class articulo
     {
+        public int id { get; set; }
+
         public int codigo { get; set; }
 
         public string nombre { get; set; }
