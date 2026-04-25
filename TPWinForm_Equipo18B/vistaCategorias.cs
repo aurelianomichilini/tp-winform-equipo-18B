@@ -1,5 +1,7 @@
 ﻿using System;
-using System.Windows.Forms; 
+using System.Windows.Forms;
+using Negocio;
+using Dominio;
 
 namespace TPWinForm_Equipo18B
 {
@@ -8,6 +10,20 @@ namespace TPWinForm_Equipo18B
         public vistaCategorias()
         {
             InitializeComponent();
+        }
+
+        private void cargarCategoria()
+        {
+            CategoriaNegocio negocio = new CategoriaNegocio();
+
+            try
+            {
+                gridCategorias.DataSource = negocio.listarCategorias();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void Marcas_Click(object sender, EventArgs e)
@@ -46,6 +62,11 @@ namespace TPWinForm_Equipo18B
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void vistaCategorias_Load(object sender, EventArgs e)
+        {
+            cargarCategoria();
         }
     }
 }

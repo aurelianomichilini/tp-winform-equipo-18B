@@ -7,8 +7,8 @@
     <ProjectGuid>{CDE578A0-171B-4FFE-B3D3-6992294F367E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TPWinForm_Equipo18B</RootNamespace>
-    <AssemblyName>TPWinForm_Equipo18B</AssemblyName>
+    <RootNamespace>Dominio</RootNamespace>
+    <AssemblyName>Dominio</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

@@ -154,6 +154,7 @@
             this.Controls.Add(this.lblCategorias);
             this.Name = "vistaCategorias";
             this.Text = "Categorias";
+            this.Load += new System.EventHandler(this.vistaCategorias_Load);
             this.groupBuscar.ResumeLayout(false);
             this.groupBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCategorias)).EndInit();
