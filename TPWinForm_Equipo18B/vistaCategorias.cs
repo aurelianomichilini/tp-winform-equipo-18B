@@ -1,7 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Dominio;
 using Negocio;
-using Dominio;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace TPWinForm_Equipo18B
 {
@@ -18,7 +19,15 @@ namespace TPWinForm_Equipo18B
 
             try
             {
-                gridCategorias.DataSource = negocio.listarCategorias();
+                List<Categoria> lista = negocio.listarCategorias();
+
+                if (lista.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron categorías");
+                }
+
+                gridCategorias.DataSource = lista;
+
             }
             catch (Exception ex)
             {
@@ -46,11 +55,12 @@ namespace TPWinForm_Equipo18B
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            vistaAgregarCategoria ventana = new vistaAgregarCategoria();
+            vistaArticulo ventana = new vistaArticulo();
             this.Hide();
             ventana.ShowDialog();
             this.Show();
 
+            cargarCategoria();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

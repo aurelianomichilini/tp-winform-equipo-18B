@@ -51,7 +51,7 @@ namespace TPWinForm_Equipo18B
                     return;
                 }
 
-                if (txtNuevoNombre.ToString().Length > 50)
+                if (txtNuevoNombre.Text.Length > 50)
                 {
                     MessageBox.Show("El nombre es demasiado largo");
                     return;

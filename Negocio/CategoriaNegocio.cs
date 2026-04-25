@@ -39,6 +39,27 @@ namespace Negocio
             }
         }
 
+        public void agregarCategoria(Categoria nueva)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("INSERT INTO CATEGORIAS (Descripcion) VALUES (@descripcion)");
+                datos.setParameter("@descripcion", nueva.descripcion);
+
+                datos.executeAction();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+
         public void modificarCategoria(Categoria Categoria)
         {
             dbAccess datos = new dbAccess();
