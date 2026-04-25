@@ -59,6 +59,12 @@
     <Compile Include="editarMarca.Designer.cs">
       <DependentUpon>editarMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="vistaAgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistaAgregarCategoria.Designer.cs">
+      <DependentUpon>vistaAgregarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistaArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vistaAgregarCategoria.resx">
+      <DependentUpon>vistaAgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vistaArticulo.resx">
       <DependentUpon>vistaArticulo.cs</DependentUpon>
     </EmbeddedResource>

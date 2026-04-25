@@ -46,6 +46,10 @@ namespace TPWinForm_Equipo18B
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            vistaAgregarCategoria ventana = new vistaAgregarCategoria();
+            this.Hide();
+            ventana.ShowDialog();
+            this.Show();
 
         }
 
