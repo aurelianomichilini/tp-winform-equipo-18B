@@ -111,9 +111,13 @@
             // 
             // gridCategorias
             // 
+            this.gridCategorias.AllowUserToAddRows = false;
+            this.gridCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCategorias.Location = new System.Drawing.Point(20, 130);
             this.gridCategorias.Name = "gridCategorias";
+            this.gridCategorias.ReadOnly = true;
+            this.gridCategorias.RowHeadersVisible = false;
             this.gridCategorias.RowHeadersWidth = 51;
             this.gridCategorias.RowTemplate.Height = 24;
             this.gridCategorias.Size = new System.Drawing.Size(754, 254);
