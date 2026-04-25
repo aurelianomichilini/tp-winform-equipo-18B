@@ -17,29 +17,17 @@ namespace TPWinForm_Equipo18B
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_irMarcas_Click(object sender, EventArgs e)
         {
             vistaMarca ventana = new vistaMarca();
+            this.Hide();
+            ventana.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            vistaCategorias ventana = new vistaCategorias();
             this.Hide();
             ventana.ShowDialog();
             this.Show();
