@@ -95,7 +95,7 @@ namespace TPWinForm_Equipo18B
 
                         if (decimal.TryParse(busqueda, out precioMayor))
                         {
-                            if (item.precio > precioMayor)
+                            if (item.precio >= precioMayor)
                             {
                                 listaFiltrada.Add(item);
                             }
