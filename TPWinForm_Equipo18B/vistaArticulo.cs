@@ -32,5 +32,13 @@ namespace TPWinForm_Equipo18B
             ventana.ShowDialog();
             Show();
         }
+
+        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        {
+            vistaAgregarArticulo ventana = new vistaAgregarArticulo();
+            Hide();
+            ventana.ShowDialog();
+            Show();
+        }
     }
 }

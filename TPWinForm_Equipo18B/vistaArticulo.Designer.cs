@@ -75,6 +75,7 @@
             this.btnNuevoProducto.TabIndex = 2;
             this.btnNuevoProducto.Text = "+ Nuevo producto";
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
             // lblBuscarPor
             // 
