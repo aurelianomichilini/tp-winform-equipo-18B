@@ -18,16 +18,26 @@ namespace TPWinForm_Equipo18B
         {
             InitializeComponent();
         }
+
+        private List<Marca> listaMarcas;
         private void CargarMarcas()
         {
             MarcaNegocio negocio = new MarcaNegocio();
 
             try
             {
-                DGV_Marca.DataSource = negocio.listarMarcas();
-                DGV_Marca.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                DGV_Marca.Columns["Id"].Visible = false;
-                DGV_Marca.Columns["descripcion"].HeaderText = "Descripcion";
+                listaMarcas = negocio.listarMarcas();
+
+                DataGridMarca.DataSource = null;
+                DataGridMarca.DataSource = listaMarcas;
+
+                DataGridMarca.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                if (DataGridMarca.Columns["id"] != null)
+                    DataGridMarca.Columns["id"].Visible = false;
+
+                if (DataGridMarca.Columns["descripcion"] != null)
+                    DataGridMarca.Columns["descripcion"].HeaderText = "Descripcion";
             }
             catch (Exception ex)
             {
@@ -37,8 +47,8 @@ namespace TPWinForm_Equipo18B
 
         private void vistaMarca_Load(object sender, EventArgs e)
         {
-            DGV_Marca.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGV_Marca.MultiSelect = false;
+            DataGridMarca.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DataGridMarca.MultiSelect = false;
             CargarMarcas();
         }
 
@@ -56,9 +66,9 @@ namespace TPWinForm_Equipo18B
 
             try
             {
-                if (DGV_Marca.CurrentRow != null)
+                if (DataGridMarca.CurrentRow != null)
                 {
-                    Marca seleccionada = (Marca)DGV_Marca.CurrentRow.DataBoundItem;
+                    Marca seleccionada = (Marca)DataGridMarca.CurrentRow.DataBoundItem;
 
                     DialogResult respuesta = MessageBox.Show(
                         "¿Querés eliminar la marca seleccionada?",
@@ -93,9 +103,9 @@ namespace TPWinForm_Equipo18B
 
             try
             {
-                if (DGV_Marca.CurrentRow != null)
+                if (DataGridMarca.CurrentRow != null)
                 {
-                    Marca seleccionada = (Marca)DGV_Marca.CurrentRow.DataBoundItem;
+                    Marca seleccionada = (Marca)DataGridMarca.CurrentRow.DataBoundItem;
                     editarMarca ventana = new editarMarca(seleccionada);
                     ventana.ShowDialog();
                     CargarMarcas();
@@ -110,6 +120,68 @@ namespace TPWinForm_Equipo18B
                 MessageBox.Show("Error al eliminar: " + ex.Message);
             }
             
+        }
+        private List<Marca> buscarMarca(string busqueda)
+        {
+            MarcaNegocio negocio = new MarcaNegocio();
+
+            if (listaMarcas == null)
+            {
+                listaMarcas = negocio.listarMarcas();
+            }
+
+            List<Marca> listaFiltrada = new List<Marca>();
+
+            foreach (Marca item in listaMarcas)
+            {
+                if (item.descripcion != null &&
+                    item.descripcion.ToLower().Contains(busqueda.ToLower()))
+                {
+                    listaFiltrada.Add(item);
+                }
+            }
+
+            return listaFiltrada;
+        }
+        private void btn_buscar_marca_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string busqueda = txtbuscarmarca.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(busqueda))
+                {
+                    MessageBox.Show("Debe ingresar algo para buscar");
+                    return;
+                }
+
+                List<Marca> listaFiltrada = buscarMarca(busqueda);
+
+                if (listaFiltrada.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron marcas");
+                    return;
+                }
+
+                DataGridMarca.DataSource = null;
+                DataGridMarca.DataSource = listaFiltrada;
+
+                if (DataGridMarca.Columns["id"] != null)
+                    DataGridMarca.Columns["id"].Visible = false;
+
+                if (DataGridMarca.Columns["descripcion"] != null)
+                    DataGridMarca.Columns["descripcion"].HeaderText = "Descripcion";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar marca: " + ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            CargarMarcas();
+            txtbuscarmarca.Clear();
         }
     }
 }
