@@ -104,6 +104,29 @@ namespace Negocio
                 datos.closeConnection();
             }
         }
+        public bool existeMarca(string descripcion)
+        {
+            dbAccess datos = new dbAccess();
 
+            try
+            {
+                datos.setQuery("SELECT Id FROM MARCAS WHERE Descripcion = @descripcion");
+                datos.setParameter("@descripcion", descripcion);
+                datos.executeRead();
+
+                if (datos.Reader.Read())
+                    return true;
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
     }
 }

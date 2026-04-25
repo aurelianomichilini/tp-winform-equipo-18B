@@ -50,7 +50,62 @@ namespace TPWinForm_Equipo18B
                 throw ex;
             }
         }
+        private void cargarComboFiltro()
+        {
+            cbbbusqueda.Items.Clear();
 
+            cbbbusqueda.Items.Add("Código");
+            cbbbusqueda.Items.Add("Nombre");
+            cbbbusqueda.Items.Add("Descripción");
+            cbbbusqueda.Items.Add("Marca");
+            cbbbusqueda.Items.Add("Categoría");
+            cbbbusqueda.Items.Add("Precio mayor a");
+            cbbbusqueda.Items.Add("Precio menor a");
+
+            cbbbusqueda.SelectedIndex = 0;
+        }
+
+        private List<Articulo> filtrarArticulos(string campo, string busqueda)
+        {
+            List<Articulo> listaFiltrada = new List<Articulo>();
+
+            if (listaArticulos == null)
+                return listaFiltrada;
+
+            busqueda = busqueda.ToLower();
+
+            foreach (Articulo item in listaArticulos)
+            {
+                switch (campo)
+                {
+                    case "Nombre":
+                        if (item.nombre != null && item.nombre.ToLower().Contains(busqueda))
+                            listaFiltrada.Add(item);
+                        break;
+
+                    case "Marca":
+                        if (item.IdMarca != null &&
+                            item.IdMarca.descripcion != null &&
+                            item.IdMarca.descripcion.ToLower().Contains(busqueda))
+                            listaFiltrada.Add(item);
+                        break;
+
+                    case "Precio mayor a":
+                        decimal precioMayor;
+
+                        if (decimal.TryParse(busqueda, out precioMayor))
+                        {
+                            if (item.precio > precioMayor)
+                            {
+                                listaFiltrada.Add(item);
+                            }
+                        }
+                        break;
+                }
+            }
+
+            return listaFiltrada;
+        }
         private void btn_irMarcas_Click(object sender, EventArgs e)
         {
             vistaMarca ventana = new vistaMarca();
@@ -79,6 +134,7 @@ namespace TPWinForm_Equipo18B
         private void vistaArticulo_Load(object sender, EventArgs e)
         {
             cargarArticulos();
+            cargarComboFiltro();
         }
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
@@ -137,6 +193,59 @@ namespace TPWinForm_Equipo18B
             {
                 MessageBox.Show("Error al eliminar el artículo: " + ex.Message);
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string campo = cbbbusqueda.SelectedItem.ToString();
+                string busqueda = txtBoxBuscar.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(busqueda))
+                {
+                    MessageBox.Show("Debe ingresar un valor para buscar.");
+                    return;
+                }
+
+                List<Articulo> listaFiltrada = filtrarArticulos(campo, busqueda);
+
+                gridArticulos.DataSource = null;
+                gridArticulos.DataSource = listaFiltrada;
+
+                gridArticulos.Columns["idArticulo"].Visible = false;
+                gridArticulos.Columns["codigo"].HeaderText = "Código";
+                gridArticulos.Columns["nombre"].HeaderText = "Nombre";
+                gridArticulos.Columns["descripcion"].HeaderText = "Descripción";
+                gridArticulos.Columns["IdMarca"].HeaderText = "Marca";
+                gridArticulos.Columns["IdCategoria"].HeaderText = "Categoría";
+                gridArticulos.Columns["precio"].HeaderText = "Precio";
+
+                if (listaFiltrada.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron artículos.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar artículos: " + ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBoxBuscar.Clear();
+
+            gridArticulos.DataSource = null;
+            gridArticulos.DataSource = listaArticulos;
+
+            gridArticulos.Columns["idArticulo"].Visible = false;
+            gridArticulos.Columns["codigo"].HeaderText = "Código";
+            gridArticulos.Columns["nombre"].HeaderText = "Nombre";
+            gridArticulos.Columns["descripcion"].HeaderText = "Descripción";
+            gridArticulos.Columns["IdMarca"].HeaderText = "Marca";
+            gridArticulos.Columns["IdCategoria"].HeaderText = "Categoría";
+            gridArticulos.Columns["precio"].HeaderText = "Precio";
         }
     }
 }

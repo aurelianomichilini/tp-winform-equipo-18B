@@ -32,7 +32,27 @@ namespace TPWinForm_Equipo18B
 
             try
             {
-                nueva.descripcion = textBoxAgregarMarca.Text;
+                string nuevoNombre = textBoxAgregarMarca.Text.Trim();
+                if (string.IsNullOrWhiteSpace(nuevoNombre))
+                {
+                    MessageBox.Show("Debe ingresar un nombre");
+                    return;
+                }
+
+                if (negocio.existeMarca(nuevoNombre))
+                {
+                    MessageBox.Show("Ya existe una categoría con ese nombre");
+                    return;
+                }
+
+                if (textBoxAgregarMarca.Text.Length > 50)
+                {
+                    MessageBox.Show("El nombre es demasiado largo");
+                    return;
+                }
+
+
+                nueva.descripcion = nuevoNombre;
                 negocio.agregarMarca(nueva);
                 Close();
             }

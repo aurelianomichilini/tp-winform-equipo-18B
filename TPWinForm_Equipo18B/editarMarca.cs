@@ -43,7 +43,24 @@ namespace TPWinForm_Equipo18B
 
             try
             {
-                
+                string nuevoNombre = txtboxDesc.Text.Trim();
+                if (string.IsNullOrWhiteSpace(nuevoNombre))
+                {
+                    MessageBox.Show("Debe ingresar un nombre");
+                    return;
+                }
+
+                if (negocio.existeMarca(nuevoNombre))
+                {
+                    MessageBox.Show("Ya existe una categoría con ese nombre");
+                    return;
+                }
+
+                if (txtboxDesc.Text.Length > 50)
+                {
+                    MessageBox.Show("El nombre es demasiado largo");
+                    return;
+                }
                 marca.descripcion = txtboxDesc.Text;
 
                 negocio.editarMarca(marca);
