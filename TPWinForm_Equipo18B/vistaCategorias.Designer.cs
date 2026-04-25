@@ -36,8 +36,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.groupBuscar = new System.Windows.Forms.GroupBox();
             this.gridCategorias = new System.Windows.Forms.DataGridView();
-            this.btnArticulos = new System.Windows.Forms.Button();
-            this.Marcas = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.groupBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCategorias)).BeginInit();
             this.SuspendLayout();
@@ -123,33 +122,22 @@
             this.gridCategorias.Size = new System.Drawing.Size(754, 254);
             this.gridCategorias.TabIndex = 7;
             // 
-            // btnArticulos
+            // btnVolver
             // 
-            this.btnArticulos.Location = new System.Drawing.Point(21, 402);
-            this.btnArticulos.Name = "btnArticulos";
-            this.btnArticulos.Size = new System.Drawing.Size(132, 36);
-            this.btnArticulos.TabIndex = 8;
-            this.btnArticulos.Text = "Articulos";
-            this.btnArticulos.UseVisualStyleBackColor = true;
-            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
-            // 
-            // Marcas
-            // 
-            this.Marcas.Location = new System.Drawing.Point(159, 402);
-            this.Marcas.Name = "Marcas";
-            this.Marcas.Size = new System.Drawing.Size(132, 36);
-            this.Marcas.TabIndex = 9;
-            this.Marcas.Text = "Marcas";
-            this.Marcas.UseVisualStyleBackColor = true;
-            this.Marcas.Click += new System.EventHandler(this.Marcas_Click);
+            this.btnVolver.Location = new System.Drawing.Point(643, 402);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(132, 36);
+            this.btnVolver.TabIndex = 9;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // vistaCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Marcas);
-            this.Controls.Add(this.btnArticulos);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gridCategorias);
             this.Controls.Add(this.groupBuscar);
             this.Controls.Add(this.btnEliminar);
@@ -178,7 +166,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.GroupBox groupBuscar;
         private System.Windows.Forms.DataGridView gridCategorias;
-        private System.Windows.Forms.Button btnArticulos;
-        private System.Windows.Forms.Button Marcas;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

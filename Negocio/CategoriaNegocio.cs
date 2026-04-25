@@ -60,6 +60,52 @@ namespace Negocio
             }
         }
 
+        public void eliminarCategoria(int id)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("DELETE FROM CATEGORIAS WHERE Id = @id");
+                datos.setParameter("@id", id);
+
+                datos.executeAction();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+
+        public bool categoriaConAritucloAsociado(int id)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("SELECT Id FROM ARTICULOS WHERE IdCategoria = @id");
+                datos.setParameter("@id", id);
+                datos.executeRead();
+
+                if (datos.Reader.Read())
+                    return true;
+
+                return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+
         public void modificarCategoria(Categoria Categoria)
         {
             dbAccess datos = new dbAccess();

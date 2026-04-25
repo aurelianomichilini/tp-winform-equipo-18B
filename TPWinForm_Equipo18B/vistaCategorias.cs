@@ -35,30 +35,12 @@ namespace TPWinForm_Equipo18B
             }
         }
 
-        private void Marcas_Click(object sender, EventArgs e)
-        {
-            vistaMarca ventana = new vistaMarca();
-            this.Hide();
-            ventana.ShowDialog();
-            this.Show();
-
-        }
-
-        private void btnArticulos_Click(object sender, EventArgs e)
-        {
-            vistaArticulo ventana = new vistaArticulo();
-            this.Hide();
-            ventana.ShowDialog();
-            this.Show();
-
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            vistaArticulo ventana = new vistaArticulo();
-            this.Hide();
+            vistaAgregarCategoria ventana = new vistaAgregarCategoria();
+            Hide();
             ventana.ShowDialog();
-            this.Show();
+            Show();
 
             cargarCategoria();
         }
@@ -76,7 +58,37 @@ namespace TPWinForm_Equipo18B
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            CategoriaNegocio negocio = new CategoriaNegocio();
 
+            try
+            {
+                if (gridCategorias.CurrentRow == null)
+                {
+                    MessageBox.Show("Debe seleccionar una categoría");
+                    return;
+                }
+
+                Categoria seleccionada = (Categoria)gridCategorias.CurrentRow.DataBoundItem;
+
+                if (negocio.categoriaConAritucloAsociado(seleccionada.id))
+                {
+                    MessageBox.Show("No se puede eliminar la categoría porque está asociada a uno o más artículos");
+                    return;
+                }
+
+                DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar la categoría?", "Eliminar", MessageBoxButtons.YesNo);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    negocio.eliminarCategoria(seleccionada.id);
+                    MessageBox.Show("Categoría eliminada correctamente");
+                    cargarCategoria();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -87,6 +99,16 @@ namespace TPWinForm_Equipo18B
         private void vistaCategorias_Load(object sender, EventArgs e)
         {
             cargarCategoria();
+        }
+
+        private void Volver_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

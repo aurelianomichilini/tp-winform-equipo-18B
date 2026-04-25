@@ -45,7 +45,7 @@ namespace TPWinForm_Equipo18B
 
                 MessageBox.Show("Categoría agregada correctamente");
 
-                this.Close();
+                Close();
             }
             catch (Exception ex)
             {
@@ -55,7 +55,7 @@ namespace TPWinForm_Equipo18B
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

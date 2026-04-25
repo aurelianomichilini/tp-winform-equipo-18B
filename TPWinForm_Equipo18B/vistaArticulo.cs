@@ -28,9 +28,9 @@ namespace TPWinForm_Equipo18B
         private void btnCategorias_Click(object sender, EventArgs e)
         {
             vistaCategorias ventana = new vistaCategorias();
-            this.Hide();
+            Hide();
             ventana.ShowDialog();
-            this.Show();
+            Show();
         }
     }
 }

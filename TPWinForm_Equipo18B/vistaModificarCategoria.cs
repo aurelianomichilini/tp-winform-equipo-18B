@@ -23,7 +23,7 @@ namespace TPWinForm_Equipo18B
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace TPWinForm_Equipo18B
 
                 MessageBox.Show("Categoría modificada correctamente");
 
-                this.Close();
+                Close();
             }
             catch (Exception ex)
             {
