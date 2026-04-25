@@ -80,5 +80,27 @@ namespace TPWinForm_Equipo18B
         {
             cargarArticulos();
         }
+
+        private void btnModificarArticulo_Click(object sender, EventArgs e)
+        {
+             try
+            {
+                if (gridArticulos.CurrentRow != null)
+                {
+                    Articulo seleccionada = (Articulo)gridArticulos.CurrentRow.DataBoundItem;
+                    vistaModificarArticulo ventana = new vistaModificarArticulo(seleccionada);
+                    ventana.ShowDialog();
+                    cargarArticulos();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccioná una marca primero");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar: " + ex.Message);
+            }
+        }
     }
 }

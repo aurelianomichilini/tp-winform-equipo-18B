@@ -91,6 +91,12 @@
     <Compile Include="vistaMarca.Designer.cs">
       <DependentUpon>vistaMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="vistaModificarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistaModificarArticulo.Designer.cs">
+      <DependentUpon>vistaModificarArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="vistaModificarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vistaMarca.resx">
       <DependentUpon>vistaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vistaModificarArticulo.resx">
+      <DependentUpon>vistaModificarArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vistaModificarCategoria.resx">
       <DependentUpon>vistaModificarCategoria.cs</DependentUpon>
