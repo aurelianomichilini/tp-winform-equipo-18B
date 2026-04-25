@@ -16,12 +16,12 @@ namespace TPWinForm_Equipo18B
     public partial class editarMarca : Form
     {
 
-        private marca marca = null;
+        private Marca marca = null;
         public editarMarca()
         {
             InitializeComponent();
         }
-        public editarMarca(marca marca)
+        public editarMarca(Marca marca)
         {
             InitializeComponent();
             this.marca = marca;
@@ -38,7 +38,7 @@ namespace TPWinForm_Equipo18B
 
         private void btnconfirmar_Click(object sender, EventArgs e)
         {
-            marca Marca = new marca();
+            Marca Marca = new Marca();
             MarcaNegocio negocio = new MarcaNegocio();
 
             try

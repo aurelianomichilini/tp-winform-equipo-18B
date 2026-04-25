@@ -27,7 +27,7 @@ namespace TPWinForm_Equipo18B
         private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
 
-            marca nueva = new marca();
+            Marca nueva = new Marca();
             MarcaNegocio negocio = new MarcaNegocio();
 
             try

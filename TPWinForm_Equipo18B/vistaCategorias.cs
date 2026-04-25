@@ -51,7 +51,7 @@ namespace TPWinForm_Equipo18B
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            categoria seleccionada = (categoria)gridCategorias.CurrentRow.DataBoundItem;
+            Categoria seleccionada = (Categoria)gridCategorias.CurrentRow.DataBoundItem;
 
             vistaModificarCategoria ventana = new vistaModificarCategoria();
             ventana.categoriaSeleccionada = seleccionada;

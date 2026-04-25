@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreSeleccionado = new System.Windows.Forms.Label();
-            this.txtNombreActual = new System.Windows.Forms.TextBox();
+            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -99,13 +99,13 @@
             this.lblNombreSeleccionado.TabIndex = 5;
             this.lblNombreSeleccionado.Text = "lblNombreSeleccionado";
             // 
-            // txtNombreActual
+            // txtNuevoNombre
             // 
-            this.txtNombreActual.Location = new System.Drawing.Point(227, 157);
-            this.txtNombreActual.Name = "txtNombreActual";
-            this.txtNombreActual.Size = new System.Drawing.Size(197, 22);
-            this.txtNombreActual.TabIndex = 6;
-            this.txtNombreActual.Text = "Ingrese nombre";
+            this.txtNuevoNombre.Location = new System.Drawing.Point(227, 157);
+            this.txtNuevoNombre.Name = "txtNuevoNombre";
+            this.txtNuevoNombre.Size = new System.Drawing.Size(197, 22);
+            this.txtNuevoNombre.TabIndex = 6;
+            this.txtNuevoNombre.Text = "Ingrese nombre";
             // 
             // btnAceptar
             // 
@@ -115,6 +115,7 @@
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -124,6 +125,7 @@
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // vistaModificarCategoria
             // 
@@ -132,7 +134,7 @@
             this.ClientSize = new System.Drawing.Size(469, 283);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.txtNombreActual);
+            this.Controls.Add(this.txtNuevoNombre);
             this.Controls.Add(this.lblNombreSeleccionado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -156,7 +158,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNombreSeleccionado;
-        private System.Windows.Forms.TextBox txtNombreActual;
+        private System.Windows.Forms.TextBox txtNuevoNombre;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

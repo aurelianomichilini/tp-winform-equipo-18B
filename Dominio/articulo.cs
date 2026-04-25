@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class articulo
+    public class Articulo
     {
         public int idArticulo { get; set; }
 
@@ -16,9 +16,9 @@ namespace Dominio
 
         public string descripcion { get; set; }
 
-        public marca IdMarca { get; set; }
+        public Marca IdMarca { get; set; }
 
-        public categoria IdCategoria { get; set; }
+        public Categoria IdCategoria { get; set; }
 
         public float precio { get; set; }
     }

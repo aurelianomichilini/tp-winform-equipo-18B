@@ -6,9 +6,9 @@ namespace Negocio
 {
     public class CategoriaNegocio
     {
-        public List<categoria> listarCategorias()
+        public List<Categoria> listarCategorias()
         {
-            List<categoria> lista = new List<categoria>();
+            List<Categoria> lista = new List<Categoria>();
             dbAccess datos = new dbAccess();
 
             try
@@ -18,7 +18,7 @@ namespace Negocio
 
                 while (datos.Reader.Read())
                 {
-                    categoria aux = new categoria();
+                    Categoria aux = new Categoria();
 
                     aux.id = (int)datos.Reader["Id"];
                     aux.descripcion = datos.Reader["Descripcion"].ToString();
@@ -29,6 +29,53 @@ namespace Negocio
                 return lista;
             }
 
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+
+        public void modificarCategoria(Categoria Categoria)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("UPDATE CATEGORIAS SET Descripcion = @descripcion WHERE Id = @id");
+                datos.setParameter("@descripcion", Categoria.descripcion);
+                datos.setParameter("@id", Categoria.id);
+
+                datos.executeAction();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+
+        public bool existeCategoria(string descripcion)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("SELECT Id FROM CATEGORIAS WHERE Descripcion = @descripcion");
+                datos.setParameter("@descripcion", descripcion);
+                datos.executeRead();
+
+                if (datos.Reader.Read())
+                    return true;
+
+                return false;
+            }
             catch (Exception)
             {
                 throw;

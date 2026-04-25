@@ -58,7 +58,7 @@ namespace TPWinForm_Equipo18B
             {
                 if (DGV_Marca.CurrentRow != null)
                 {
-                    marca seleccionada = (marca)DGV_Marca.CurrentRow.DataBoundItem;
+                    Marca seleccionada = (Marca)DGV_Marca.CurrentRow.DataBoundItem;
 
                     DialogResult respuesta = MessageBox.Show(
                         "¿Querés eliminar la marca seleccionada?",
@@ -95,7 +95,7 @@ namespace TPWinForm_Equipo18B
             {
                 if (DGV_Marca.CurrentRow != null)
                 {
-                    marca seleccionada = (marca)DGV_Marca.CurrentRow.DataBoundItem;
+                    Marca seleccionada = (Marca)DGV_Marca.CurrentRow.DataBoundItem;
                     editarMarca ventana = new editarMarca(seleccionada);
                     ventana.ShowDialog();
                     CargarMarcas();

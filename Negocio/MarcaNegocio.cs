@@ -13,9 +13,9 @@ namespace Negocio
 
 
 
-        public List<marca> listarMarcas()
+        public List<Marca> listarMarcas()
         {
-            List<marca> lista = new List<marca>();
+            List<Marca> lista = new List<Marca>();
             dbAccess datos = new dbAccess();
 
             try
@@ -25,7 +25,7 @@ namespace Negocio
 
                 while (datos.Reader.Read())
                 {
-                    marca aux = new marca();
+                    Marca aux = new Marca();
 
                     aux.id = (int)datos.Reader["Id"];
                     aux.descripcion = datos.Reader["Descripcion"].ToString();
@@ -45,7 +45,7 @@ namespace Negocio
             }
         }
 
-        public void agregarMarca(marca nueva)
+        public void agregarMarca(Marca nueva)
         {
             dbAccess datos = new dbAccess();
 
@@ -84,15 +84,15 @@ namespace Negocio
             }
         }
 
-        public void editarMarca(marca marca)
+        public void editarMarca(Marca Marca)
         {
             dbAccess datos = new dbAccess();
 
             try
             {
                 datos.setQuery("UPDATE MARCAS SET Descripcion = @Descripcion WHERE Id = @Id");
-                datos.setParameter("@Descripcion", marca.descripcion);
-                datos.setParameter("@Id", marca.id);
+                datos.setParameter("@Descripcion", Marca.descripcion);
+                datos.setParameter("@Id", Marca.id);
                 datos.executeAction();
             }
             catch (Exception ex)
