@@ -124,5 +124,33 @@ namespace Negocio
                 datos.closeConnection();
             }
         }
+
+        public void eliminarArticulo(int idArticulo)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery(@"
+            DELETE FROM IMAGENES
+            WHERE IdArticulo = @idArticulo;
+
+            DELETE FROM ARTICULOS
+            WHERE Id = @idArticulo;
+        ");
+
+                datos.setParameter("@idArticulo", idArticulo);
+
+                datos.executeAction();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
     }
 }

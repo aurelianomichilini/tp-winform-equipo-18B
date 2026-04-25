@@ -307,7 +307,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(707, 99);
+            this.pictureBox1.Location = new System.Drawing.Point(707, 118);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(229, 199);
             this.pictureBox1.TabIndex = 42;
@@ -331,6 +331,7 @@
             this.btnEliminarArticulo.TabIndex = 44;
             this.btnEliminarArticulo.Text = "Eliminar";
             this.btnEliminarArticulo.UseVisualStyleBackColor = true;
+            this.btnEliminarArticulo.Click += new System.EventHandler(this.btnEliminarArticulo_Click);
             // 
             // vistaArticulo
             // 

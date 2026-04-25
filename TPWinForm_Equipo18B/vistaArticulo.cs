@@ -102,5 +102,41 @@ namespace TPWinForm_Equipo18B
                 MessageBox.Show("Error al eliminar: " + ex.Message);
             }
         }
+
+        private void btnEliminarArticulo_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                if (gridArticulos.CurrentRow == null)
+                {
+                    MessageBox.Show("Debe seleccionar un artículo para eliminar.");
+                    return;
+                }
+
+                Articulo seleccionado = (Articulo)gridArticulos.CurrentRow.DataBoundItem;
+
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Seguro que querés eliminar el artículo seleccionado?",
+                    "Eliminar artículo",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (respuesta == DialogResult.No)
+                    return;
+
+                negocio.eliminarArticulo(seleccionado.idArticulo);
+
+                MessageBox.Show("Artículo eliminado correctamente.");
+
+                cargarArticulos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el artículo: " + ex.Message);
+            }
+        }
     }
 }
