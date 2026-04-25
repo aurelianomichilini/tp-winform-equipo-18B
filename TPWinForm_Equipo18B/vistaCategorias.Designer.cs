@@ -156,6 +156,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblCategorias);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "vistaCategorias";
             this.Text = "Categorias";
             this.Load += new System.EventHandler(this.vistaCategorias_Load);

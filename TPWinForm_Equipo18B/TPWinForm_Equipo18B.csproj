@@ -79,6 +79,12 @@
     <Compile Include="vistaMarca.Designer.cs">
       <DependentUpon>vistaMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="vistaModificarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vistaModificarCategoria.Designer.cs">
+      <DependentUpon>vistaModificarCategoria.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="agregarMarca.resx">
       <DependentUpon>agregarMarca.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vistaMarca.resx">
       <DependentUpon>vistaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vistaModificarCategoria.resx">
+      <DependentUpon>vistaModificarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
