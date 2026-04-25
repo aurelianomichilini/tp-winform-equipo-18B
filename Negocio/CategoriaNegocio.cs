@@ -29,7 +29,7 @@ namespace Negocio
                 return lista;
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -50,7 +50,7 @@ namespace Negocio
 
                 datos.executeAction();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -71,7 +71,7 @@ namespace Negocio
 
                 datos.executeAction();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -96,7 +96,7 @@ namespace Negocio
 
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -118,7 +118,7 @@ namespace Negocio
 
                 datos.executeAction();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
@@ -143,7 +143,7 @@ namespace Negocio
 
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }

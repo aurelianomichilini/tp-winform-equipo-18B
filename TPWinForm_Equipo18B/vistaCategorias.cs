@@ -1,8 +1,8 @@
-﻿using Dominio;
-using Negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace TPWinForm_Equipo18B
 {
@@ -88,7 +88,7 @@ namespace TPWinForm_Equipo18B
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                throw;
             }
         }
 

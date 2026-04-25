@@ -25,7 +25,7 @@ namespace TPWinForm_Equipo18B
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                throw;
             }
         }
 
@@ -42,6 +42,84 @@ namespace TPWinForm_Equipo18B
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                int codigo;
+                float precio;
+
+                if (!int.TryParse(txtCodigo.Text, out codigo))
+                {
+                    MessageBox.Show("El código debe ser numérico");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+                {
+                    MessageBox.Show("Debe ingresar un código");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    MessageBox.Show("Debe ingresar un nombre");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                {
+                    MessageBox.Show("Debe ingresar una descripción");
+                    return;
+                }
+
+                if (cboMarca.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una marca");
+                    return;
+                }
+
+                if (cboCategoria.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una categoría");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+                {
+                    MessageBox.Show("Debe ingresar un precio");
+                    return;
+                }
+
+                if (!float.TryParse(txtPrecio.Text, out precio))
+                {
+                    MessageBox.Show("El precio debe ser numérico");
+                    return;
+                }
+
+                Articulo nuevo = new Articulo();
+
+                nuevo.codigo = codigo;
+                nuevo.nombre = txtNombre.Text.Trim();
+                nuevo.descripcion = txtDescripcion.Text.Trim();
+                nuevo.IdMarca = (Marca)cboMarca.SelectedItem;
+                nuevo.IdCategoria = (Categoria)cboCategoria.SelectedItem;
+                nuevo.precio = precio;
+
+                negocio.agregarArticulo(nuevo);
+
+                MessageBox.Show("Artículo agregado correctamente");
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }
