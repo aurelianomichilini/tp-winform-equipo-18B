@@ -51,6 +51,8 @@ namespace TPWinForm_Equipo18B
             try
             {
                 decimal precio;
+                Marca marcaSeleccionada = (Marca)cboMarca.SelectedItem;
+                Categoria categoriaSeleccionada = (Categoria)cboCategoria.SelectedItem;
 
                 if (string.IsNullOrWhiteSpace(txtCodigo.Text))
                 {
@@ -91,6 +93,12 @@ namespace TPWinForm_Equipo18B
                 if (!decimal.TryParse(txtPrecio.Text, out precio))
                 {
                     MessageBox.Show("El precio debe ser numérico");
+                    return;
+                }
+
+                if (negocio.existeMarcaCategoriaArticulo(txtNombre.Text.Trim(), marcaSeleccionada.id, categoriaSeleccionada.id))
+                {
+                    MessageBox.Show("Ya existe un artículo con ese nombre para esa marca y categoría");
                     return;
                 }
 

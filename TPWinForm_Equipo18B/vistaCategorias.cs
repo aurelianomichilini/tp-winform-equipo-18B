@@ -29,6 +29,8 @@ namespace TPWinForm_Equipo18B
 
                 gridCategorias.DataSource = listaCategorias;
 
+                gridCategorias.Columns["id"].Visible = false;
+
             }
             catch (Exception ex)
             {

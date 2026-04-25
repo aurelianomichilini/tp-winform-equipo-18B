@@ -9,7 +9,6 @@ namespace Dominio
 {
     public class Categoria
     {
-        [DisplayName("Código")]
         public int id { get; set; }
         [DisplayName("Nombre")]
         public string descripcion { get; set; }

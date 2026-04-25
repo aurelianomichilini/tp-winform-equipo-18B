@@ -36,14 +36,8 @@ namespace TPWinForm_Equipo18B
                 gridArticulos.DataSource = listaArticulos;
 
                 gridArticulos.Columns["idArticulo"].Visible = false;
-                gridArticulos.Columns["codigo"].HeaderText = "Código";
-                gridArticulos.Columns["nombre"].HeaderText = "Nombre";
-                gridArticulos.Columns["descripcion"].HeaderText = "Descripción";
-                gridArticulos.Columns["IdMarca"].HeaderText = "Marca";
-                gridArticulos.Columns["IdCategoria"].HeaderText = "Categoría";
                 // Lo sumé para que no traiga todos los decimales de la bdd sino que los muestre con este formato, es decir, muestra hasta 3 decimales y si no tiene, no los muestra.
                 gridArticulos.Columns["precio"].DefaultCellStyle.Format = "0.###";
-                gridArticulos.Columns["precio"].HeaderText = "Precio";
             }
             catch (Exception ex)
             {

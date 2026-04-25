@@ -152,5 +152,34 @@ namespace Negocio
                 datos.closeConnection();
             }
         }
+
+        public bool existeMarcaCategoriaArticulo(string nombre, int idMarca, int idCategoria)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("SELECT Id FROM ARTICULOS WHERE Nombre = @nombre AND IdMarca = @idMarca AND IdCategoria = @idCategoria");
+                datos.setParameter("@nombre", nombre);
+                datos.setParameter("@idMarca", idMarca);
+                datos.setParameter("@idCategoria", idCategoria);
+
+                datos.executeRead();
+
+                if (datos.Reader.Read())
+                    return true;
+
+                return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+
     }
 }
