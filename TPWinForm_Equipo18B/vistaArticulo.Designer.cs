@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblArticulo = new System.Windows.Forms.Label();
-            this.dataGridArticulos = new System.Windows.Forms.DataGridView();
+            this.gridArticulos = new System.Windows.Forms.DataGridView();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.lblBuscarPor = new System.Windows.Forms.Label();
             this.listBuscarPor = new System.Windows.Forms.ListBox();
@@ -40,7 +40,7 @@
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.btn_irMarcas = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridArticulos)).BeginInit();
             this.groupBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,16 +54,20 @@
             this.lblArticulo.TabIndex = 0;
             this.lblArticulo.Text = "Artículos";
             // 
-            // dataGridArticulos
+            // gridArticulos
             // 
-            this.dataGridArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridArticulos.Location = new System.Drawing.Point(19, 122);
-            this.dataGridArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridArticulos.Name = "dataGridArticulos";
-            this.dataGridArticulos.RowHeadersWidth = 51;
-            this.dataGridArticulos.RowTemplate.Height = 24;
-            this.dataGridArticulos.Size = new System.Drawing.Size(759, 402);
-            this.dataGridArticulos.TabIndex = 1;
+            this.gridArticulos.AllowUserToAddRows = false;
+            this.gridArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridArticulos.Location = new System.Drawing.Point(19, 122);
+            this.gridArticulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridArticulos.Name = "gridArticulos";
+            this.gridArticulos.ReadOnly = true;
+            this.gridArticulos.RowHeadersVisible = false;
+            this.gridArticulos.RowHeadersWidth = 51;
+            this.gridArticulos.RowTemplate.Height = 24;
+            this.gridArticulos.Size = new System.Drawing.Size(759, 402);
+            this.gridArticulos.TabIndex = 1;
             // 
             // btnNuevoProducto
             // 
@@ -179,12 +183,13 @@
             this.Controls.Add(this.btn_irMarcas);
             this.Controls.Add(this.groupBuscar);
             this.Controls.Add(this.btnNuevoProducto);
-            this.Controls.Add(this.dataGridArticulos);
+            this.Controls.Add(this.gridArticulos);
             this.Controls.Add(this.lblArticulo);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "vistaArticulo";
             this.Text = "Artículos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridArticulos)).EndInit();
+            this.Load += new System.EventHandler(this.vistaArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridArticulos)).EndInit();
             this.groupBuscar.ResumeLayout(false);
             this.groupBuscar.PerformLayout();
             this.ResumeLayout(false);
@@ -195,7 +200,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblArticulo;
-        private System.Windows.Forms.DataGridView dataGridArticulos;
+        private System.Windows.Forms.DataGridView gridArticulos;
         private System.Windows.Forms.Button btnNuevoProducto;
         private System.Windows.Forms.Label lblBuscarPor;
         private System.Windows.Forms.ListBox listBuscarPor;

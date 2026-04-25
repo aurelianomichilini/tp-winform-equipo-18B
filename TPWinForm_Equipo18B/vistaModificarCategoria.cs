@@ -67,7 +67,7 @@ namespace TPWinForm_Equipo18B
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }

@@ -10,7 +10,7 @@ namespace Dominio
     {
         public int idArticulo { get; set; }
 
-        public int codigo { get; set; }
+        public string codigo { get; set; }
 
         public string nombre { get; set; }
 
@@ -20,6 +20,6 @@ namespace Dominio
 
         public Categoria IdCategoria { get; set; }
 
-        public float precio { get; set; }
+        public decimal precio { get; set; }
     }
 }

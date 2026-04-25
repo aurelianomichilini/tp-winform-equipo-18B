@@ -25,7 +25,7 @@ namespace TPWinForm_Equipo18B
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
@@ -50,14 +50,7 @@ namespace TPWinForm_Equipo18B
 
             try
             {
-                int codigo;
-                float precio;
-
-                if (!int.TryParse(txtCodigo.Text, out codigo))
-                {
-                    MessageBox.Show("El código debe ser numérico");
-                    return;
-                }
+                decimal precio;
 
                 if (string.IsNullOrWhiteSpace(txtCodigo.Text))
                 {
@@ -95,7 +88,7 @@ namespace TPWinForm_Equipo18B
                     return;
                 }
 
-                if (!float.TryParse(txtPrecio.Text, out precio))
+                if (!decimal.TryParse(txtPrecio.Text, out precio))
                 {
                     MessageBox.Show("El precio debe ser numérico");
                     return;
@@ -103,7 +96,7 @@ namespace TPWinForm_Equipo18B
 
                 Articulo nuevo = new Articulo();
 
-                nuevo.codigo = codigo;
+                nuevo.codigo = txtCodigo.Text.Trim();
                 nuevo.nombre = txtNombre.Text.Trim();
                 nuevo.descripcion = txtDescripcion.Text.Trim();
                 nuevo.IdMarca = (Marca)cboMarca.SelectedItem;
@@ -118,7 +111,7 @@ namespace TPWinForm_Equipo18B
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
     }

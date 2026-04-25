@@ -14,9 +14,41 @@ namespace TPWinForm_Equipo18B
 {
     public partial class vistaArticulo : Form
     {
+        private List<Articulo> listaArticulos;
         public vistaArticulo()
         {
             InitializeComponent();
+        }
+
+        private void cargarArticulos()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                listaArticulos = negocio.listarArticulos();
+
+                if (listaArticulos.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron artículos");
+                }
+
+                gridArticulos.DataSource = listaArticulos;
+
+                gridArticulos.Columns["idArticulo"].Visible = false;
+                gridArticulos.Columns["codigo"].HeaderText = "Código";
+                gridArticulos.Columns["nombre"].HeaderText = "Nombre";
+                gridArticulos.Columns["descripcion"].HeaderText = "Descripción";
+                gridArticulos.Columns["IdMarca"].HeaderText = "Marca";
+                gridArticulos.Columns["IdCategoria"].HeaderText = "Categoría";
+                // Lo sumé para que no traiga todos los decimales de la bdd sino que los muestre con este formato, es decir, muestra hasta 3 decimales y si no tiene, no los muestra.
+                gridArticulos.Columns["precio"].DefaultCellStyle.Format = "0.###";
+                gridArticulos.Columns["precio"].HeaderText = "Precio";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void btn_irMarcas_Click(object sender, EventArgs e)
@@ -41,6 +73,12 @@ namespace TPWinForm_Equipo18B
             Hide();
             ventana.ShowDialog();
             Show();
+            cargarArticulos();
+        }
+
+        private void vistaArticulo_Load(object sender, EventArgs e)
+        {
+            cargarArticulos();
         }
     }
 }
