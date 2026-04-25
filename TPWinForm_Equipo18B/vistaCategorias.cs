@@ -8,6 +8,7 @@ namespace TPWinForm_Equipo18B
 {
     public partial class vistaCategorias : Form
     {
+        private List<Categoria> listaCategorias;
         public vistaCategorias()
         {
             InitializeComponent();
@@ -19,14 +20,14 @@ namespace TPWinForm_Equipo18B
 
             try
             {
-                List<Categoria> lista = negocio.listarCategorias();
+                listaCategorias = negocio.listarCategorias();
 
-                if (lista.Count == 0)
+                if (listaCategorias.Count == 0)
                 {
                     MessageBox.Show("No se encontraron categorías");
                 }
 
-                gridCategorias.DataSource = lista;
+                gridCategorias.DataSource = listaCategorias;
 
             }
             catch (Exception ex)
@@ -93,7 +94,38 @@ namespace TPWinForm_Equipo18B
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            string busqueda = txtBuscar.Text.Trim();
 
+            if (string.IsNullOrWhiteSpace(busqueda))
+            {
+                MessageBox.Show("Debe ingresar algo para buscar");
+
+            }
+
+            List<Categoria> listaFiltrada = buscarCategoria(busqueda);
+
+            if (listaFiltrada.Count == 0)
+            {
+                MessageBox.Show("No se encontraron categorías");
+                return;
+            }
+
+            gridCategorias.DataSource = listaFiltrada;
+        }
+
+        private List<Categoria> buscarCategoria(string busqueda)
+        {
+            List<Categoria> listaFiltrada = new List<Categoria>();
+
+            foreach (Categoria item in listaCategorias)
+            {
+                if (item.descripcion.ToLower().Contains(busqueda.ToLower()))
+                {
+                    listaFiltrada.Add(item);
+                }
+            }
+
+            return listaFiltrada;
         }
 
         private void vistaCategorias_Load(object sender, EventArgs e)
