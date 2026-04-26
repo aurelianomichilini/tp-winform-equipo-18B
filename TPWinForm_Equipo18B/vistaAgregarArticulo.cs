@@ -20,6 +20,7 @@ namespace TPWinForm_Equipo18B
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            cargarImagenDefault();
 
             try
             {
@@ -258,6 +259,11 @@ namespace TPWinForm_Equipo18B
                 indiceImagen = listaImagenes.Count - 1;
 
             cargarImagen(listaImagenes[indiceImagen]);
+        }
+
+        private void cargarImagenDefault()
+        {
+            pbImagen.Load("https://capacitacion.fundacionbancopampa.com.ar/wp-content/uploads/2024/09/placeholder-4.png");
         }
     }
 }

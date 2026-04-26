@@ -15,6 +15,8 @@ namespace TPWinForm_Equipo18B
     public partial class vistaArticulo : Form
     {
         private List<Articulo> listaArticulos;
+        private List<Imagenes> listaImagenes;
+        private int indiceImagen;
         public vistaArticulo()
         {
             InitializeComponent();
@@ -189,6 +191,54 @@ namespace TPWinForm_Equipo18B
             }
         }
 
+        private void cargarDetalleArticulo()
+        {
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+            try
+            {
+                if (gridArticulos.CurrentRow == null)
+                    return;
+
+                Articulo seleccionado = (Articulo)gridArticulos.CurrentRow.DataBoundItem;
+
+                lblCodigoArticuloSeleccionado.Text = seleccionado.codigo;
+                lblNombreArticuloSeleccionado.Text = seleccionado.nombre;
+                lblDescripcionArticuloSeleccionado.Text = seleccionado.descripcion;
+                lblMarcaArticuloSeleccionado.Text = seleccionado.IdMarca.ToString();
+                lblCategoriaArticuloSeleccionado.Text = seleccionado.IdCategoria.ToString();
+                lblPrecioArticuloSeleccionado.Text = seleccionado.precio.ToString("0.##");
+
+                listaImagenes = imagenNegocio.listarPorArticulo(seleccionado.idArticulo);
+                indiceImagen = 0;
+
+                if (listaImagenes.Count > 0)
+                {
+                    cargarImagen(listaImagenes[indiceImagen].imagenUrl);
+                }
+                else
+                {
+                    pbImagenArticuloSeleccionado.Image = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void cargarImagen(string url)
+        {
+            try
+            {
+                pbImagenArticuloSeleccionado.Load(url);
+            }
+            catch
+            {
+                cargarImagenDefault();
+            }
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -240,6 +290,16 @@ namespace TPWinForm_Equipo18B
             gridArticulos.Columns["IdMarca"].HeaderText = "Marca";
             gridArticulos.Columns["IdCategoria"].HeaderText = "Categoría";
             gridArticulos.Columns["precio"].HeaderText = "Precio";
+        }
+
+        private void gridArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            cargarDetalleArticulo();
+        }
+
+        private void cargarImagenDefault()
+        {
+            pbImagenArticuloSeleccionado.Load("https://capacitacion.fundacionbancopampa.com.ar/wp-content/uploads/2024/09/placeholder-4.png");
         }
     }
 }
