@@ -101,11 +101,30 @@ namespace TPWinForm_Equipo18B
                     return;
                 }
 
+                if (precio < 0)
+                {
+                    MessageBox.Show("El precio no puede ser negativo");
+                    return;
+                }
+
                 if (negocio.existeMarcaCategoriaArticulo(txtNombre.Text.Trim(), marcaSeleccionada.id, categoriaSeleccionada.id))
                 {
                     MessageBox.Show("Ya existe un artículo con ese nombre para esa marca y categoría");
                     return;
                 }
+
+                if (txtDescripcion.Text.Length > 150)
+                {
+                    MessageBox.Show("La descripción no puede superar los 150 caracteres");
+                    return;
+                }
+
+                if (txtNombre.Text.Length > 50)
+                {
+                    MessageBox.Show("El nombre no puede superar los 50 caracteres");
+                    return;
+                }
+
 
                 Articulo nuevo = new Articulo();
 
