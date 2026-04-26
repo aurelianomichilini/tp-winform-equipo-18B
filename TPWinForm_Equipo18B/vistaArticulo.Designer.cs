@@ -37,9 +37,9 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBuscar = new System.Windows.Forms.GroupBox();
             this.cbbbusqueda = new System.Windows.Forms.ComboBox();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.btn_irMarcas = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
+            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.lblImagen = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
@@ -163,21 +163,15 @@
             // 
             this.cbbbusqueda.FormattingEnabled = true;
             this.cbbbusqueda.Location = new System.Drawing.Point(120, 22);
-            this.cbbbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.cbbbusqueda.Name = "cbbbusqueda";
             this.cbbbusqueda.Size = new System.Drawing.Size(160, 24);
             this.cbbbusqueda.TabIndex = 0;
             // 
-            // directorySearcher1
-            // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            // 
             // btn_irMarcas
             // 
             this.btn_irMarcas.Location = new System.Drawing.Point(837, 16);
-            this.btn_irMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_irMarcas.Margin = new System.Windows.Forms.Padding(4);
             this.btn_irMarcas.Name = "btn_irMarcas";
             this.btn_irMarcas.Size = new System.Drawing.Size(135, 34);
             this.btn_irMarcas.TabIndex = 4;
@@ -188,13 +182,19 @@
             // btnCategorias
             // 
             this.btnCategorias.Location = new System.Drawing.Point(980, 16);
-            this.btnCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCategorias.Margin = new System.Windows.Forms.Padding(4);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Size = new System.Drawing.Size(135, 34);
             this.btnCategorias.TabIndex = 5;
             this.btnCategorias.Text = "Categorias";
             this.btnCategorias.UseVisualStyleBackColor = true;
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            // 
+            // directorySearcher1
+            // 
+            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
             // lblImagen
             // 
@@ -259,7 +259,7 @@
             // pbImagenArticuloSeleccionado
             // 
             this.pbImagenArticuloSeleccionado.Location = new System.Drawing.Point(934, 182);
-            this.pbImagenArticuloSeleccionado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbImagenArticuloSeleccionado.Margin = new System.Windows.Forms.Padding(4);
             this.pbImagenArticuloSeleccionado.Name = "pbImagenArticuloSeleccionado";
             this.pbImagenArticuloSeleccionado.Size = new System.Drawing.Size(305, 245);
             this.pbImagenArticuloSeleccionado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -269,7 +269,7 @@
             // btnModificarArticulo
             // 
             this.btnModificarArticulo.Location = new System.Drawing.Point(980, 712);
-            this.btnModificarArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(100, 28);
             this.btnModificarArticulo.TabIndex = 5;
@@ -280,7 +280,7 @@
             // btnEliminarArticulo
             // 
             this.btnEliminarArticulo.Location = new System.Drawing.Point(1088, 712);
-            this.btnEliminarArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(100, 28);
             this.btnEliminarArticulo.TabIndex = 6;
@@ -356,6 +356,7 @@
             this.btnAnterior.TabIndex = 3;
             this.btnAnterior.Text = "<";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnSiguiente
             // 
@@ -365,6 +366,7 @@
             this.btnSiguiente.TabIndex = 4;
             this.btnSiguiente.Text = ">";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // vistaArticulo
             // 

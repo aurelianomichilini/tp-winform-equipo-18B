@@ -16,7 +16,8 @@ namespace TPWinForm_Equipo18B
     {
         private List<Articulo> listaArticulos;
         private List<Imagenes> listaImagenes;
-        private int indiceImagen;
+        ImagenNegocio imagenNegocio = new ImagenNegocio();
+        private int indiceImagen = 0;
         public vistaArticulo()
         {
             InitializeComponent();
@@ -193,8 +194,6 @@ namespace TPWinForm_Equipo18B
 
         private void cargarDetalleArticulo()
         {
-            ImagenNegocio imagenNegocio = new ImagenNegocio();
-
             try
             {
                 if (gridArticulos.CurrentRow == null)
@@ -300,6 +299,38 @@ namespace TPWinForm_Equipo18B
         private void cargarImagenDefault()
         {
             pbImagenArticuloSeleccionado.Load("https://capacitacion.fundacionbancopampa.com.ar/wp-content/uploads/2024/09/placeholder-4.png");
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (listaImagenes.Count == 0)
+            {
+                MessageBox.Show("No hay imágenes cargadas");
+                return;
+            }
+
+            indiceImagen--;
+
+            if (indiceImagen < 0)
+                indiceImagen = listaImagenes.Count - 1;
+
+            cargarImagen(listaImagenes[indiceImagen].imagenUrl);
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (listaImagenes.Count == 0)
+            {
+                MessageBox.Show("No hay imágenes cargadas");
+                return;
+            }
+
+            indiceImagen--;
+
+            if (indiceImagen < 0)
+                indiceImagen = listaImagenes.Count - 1;
+
+            cargarImagen(listaImagenes[indiceImagen].imagenUrl);
         }
     }
 }
