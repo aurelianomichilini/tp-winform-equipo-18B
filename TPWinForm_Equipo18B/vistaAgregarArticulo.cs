@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Dominio;
 using Negocio;
@@ -7,6 +8,9 @@ namespace TPWinForm_Equipo18B
 {
     public partial class vistaAgregarArticulo : Form
     {
+        private List<string> listaImagenes = new List<string>();
+        private int indiceImagen = 0;
+
         public vistaAgregarArticulo()
         {
             InitializeComponent();
@@ -112,6 +116,9 @@ namespace TPWinForm_Equipo18B
                 nuevo.precio = precio;
 
                 negocio.agregarArticulo(nuevo);
+                int idArticulo = negocio.buscarIdArticulo(nuevo);
+
+                agregarImagen(idArticulo);
 
                 MessageBox.Show("Artículo agregado correctamente");
 
@@ -121,6 +128,136 @@ namespace TPWinForm_Equipo18B
             {
                 throw ex;
             }
+        }
+
+        private void agregarImagen(int idArticulo)
+        {
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+            foreach (string url in listaImagenes)
+            {
+                Imagenes img = new Imagenes();
+
+                img.imagenUrl = url;
+
+                img.idArticulo = new Articulo();
+                img.idArticulo.idArticulo = idArticulo;
+
+                imagenNegocio.agregarImagen(img);
+            }
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            string url = txtUrlImagen.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                MessageBox.Show("Debe ingresar una URL");
+                return;
+            }
+
+            if (listaImagenes.Contains(url))
+            {
+                MessageBox.Show("La imagen ya fue agregada");
+                return;
+            }
+
+            if (url.Length > 1000)
+            {
+                MessageBox.Show("La URL es demasiado larga");
+                return;
+            }
+
+            if (!url.StartsWith("http://") && !url.StartsWith("https://"))
+            {
+                MessageBox.Show("La URL debe comenzar con http o https");
+                return;
+            }
+
+            try
+            {
+                pbImagen.Load(url);
+            }
+            catch
+            {
+                MessageBox.Show("No se pudo cargar la imagen, no fue guardada, por favor valide que realmente contenga una imagen");
+                return;
+            }
+
+            listaImagenes.Add(url);
+            indiceImagen = listaImagenes.Count - 1;
+
+            cargarImagen(url);
+
+            txtUrlImagen.Clear();
+        }
+
+        private void cargarImagen(string url)
+        {
+            try
+            {
+                pbImagen.Load(url);
+            }
+            catch
+            {
+                MessageBox.Show("No se pudo cargar la imagen");
+            }
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (listaImagenes.Count == 0)
+            {
+                MessageBox.Show("No hay imágenes cargadas");
+                return;
+            }
+
+            indiceImagen++;
+
+            if (indiceImagen >= listaImagenes.Count)
+                indiceImagen = 0;
+
+            cargarImagen(listaImagenes[indiceImagen]);
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (listaImagenes.Count == 0)
+            {
+                MessageBox.Show("No hay imágenes cargadas");
+                return;
+            }
+
+            indiceImagen--;
+
+            if (indiceImagen < 0)
+                indiceImagen = listaImagenes.Count - 1;
+
+            cargarImagen(listaImagenes[indiceImagen]);
+        }
+
+        private void btnEliminarImagen_Click(object sender, EventArgs e)
+        {
+            if (listaImagenes == null || listaImagenes.Count == 0)
+            {
+                MessageBox.Show("No hay imágenes para eliminar");
+                return;
+            }
+
+            listaImagenes.RemoveAt(indiceImagen);
+
+            if (listaImagenes.Count == 0)
+            {
+                pbImagen.Image = null;
+                indiceImagen = 0;
+                return;
+            }
+
+            if (indiceImagen >= listaImagenes.Count)
+                indiceImagen = listaImagenes.Count - 1;
+
+            cargarImagen(listaImagenes[indiceImagen]);
         }
     }
 }
