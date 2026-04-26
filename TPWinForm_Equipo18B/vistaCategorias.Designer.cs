@@ -36,6 +36,7 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.groupBuscar = new System.Windows.Forms.GroupBox();
             this.gridCategorias = new System.Windows.Forms.DataGridView();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.groupBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCategorias)).BeginInit();
@@ -83,9 +84,9 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(203, 11);
+            this.btnBuscar.Location = new System.Drawing.Point(203, 15);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(132, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(118, 29);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -97,14 +98,16 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(183, 22);
             this.txtBuscar.TabIndex = 5;
+            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
             // groupBuscar
             // 
+            this.groupBuscar.Controls.Add(this.btnLimpiar);
             this.groupBuscar.Controls.Add(this.txtBuscar);
             this.groupBuscar.Controls.Add(this.btnBuscar);
             this.groupBuscar.Location = new System.Drawing.Point(440, 58);
             this.groupBuscar.Name = "groupBuscar";
-            this.groupBuscar.Size = new System.Drawing.Size(347, 54);
+            this.groupBuscar.Size = new System.Drawing.Size(459, 54);
             this.groupBuscar.TabIndex = 6;
             this.groupBuscar.TabStop = false;
             // 
@@ -119,12 +122,22 @@
             this.gridCategorias.RowHeadersVisible = false;
             this.gridCategorias.RowHeadersWidth = 51;
             this.gridCategorias.RowTemplate.Height = 24;
-            this.gridCategorias.Size = new System.Drawing.Size(754, 254);
+            this.gridCategorias.Size = new System.Drawing.Size(879, 254);
             this.gridCategorias.TabIndex = 7;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(327, 15);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(118, 29);
+            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(643, 402);
+            this.btnVolver.Location = new System.Drawing.Point(767, 400);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(132, 36);
             this.btnVolver.TabIndex = 9;
@@ -136,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(933, 471);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gridCategorias);
             this.Controls.Add(this.groupBuscar);
@@ -146,7 +159,7 @@
             this.Controls.Add(this.lblCategorias);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "vistaCategorias";
-            this.Text = "Categorias";
+            this.Text = "Categoría";
             this.Load += new System.EventHandler(this.vistaCategorias_Load);
             this.groupBuscar.ResumeLayout(false);
             this.groupBuscar.PerformLayout();
@@ -166,6 +179,7 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.GroupBox groupBuscar;
         private System.Windows.Forms.DataGridView gridCategorias;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnVolver;
     }
 }

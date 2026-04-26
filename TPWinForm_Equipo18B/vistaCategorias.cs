@@ -96,6 +96,18 @@ namespace TPWinForm_Equipo18B
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            List<Categoria> listaFiltrada;
+            bool busquedaExitosa = buscarArticulo(out listaFiltrada);
+            if (!busquedaExitosa)
+            {
+                return;
+            }
+
+            gridCategorias.DataSource = listaFiltrada;
+        }
+
+        private bool buscarArticulo(out List<Categoria> listaFiltrada)
+        {
             string busqueda = txtBuscar.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(busqueda))
@@ -104,15 +116,14 @@ namespace TPWinForm_Equipo18B
 
             }
 
-            List<Categoria> listaFiltrada = buscarCategoria(busqueda);
-
+            listaFiltrada = buscarCategoria(busqueda);
             if (listaFiltrada.Count == 0)
             {
                 MessageBox.Show("No se encontraron categorías");
-                return;
+                return false;
             }
 
-            gridCategorias.DataSource = listaFiltrada;
+            return true;
         }
 
         private List<Categoria> buscarCategoria(string busqueda)
@@ -143,6 +154,28 @@ namespace TPWinForm_Equipo18B
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Clear();
+            cargarCategoria();
+        }
+
+        private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            List<Categoria> listaFiltrada;
+            if (e.KeyCode == Keys.Enter)
+            {
+                bool busquedaExitosa = buscarArticulo(out listaFiltrada);
+                if (!busquedaExitosa)
+                {
+                    return;
+                }
+
+                gridCategorias.DataSource = listaFiltrada;
+            }
+
         }
     }
 }

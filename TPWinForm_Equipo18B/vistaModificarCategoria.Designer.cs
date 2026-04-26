@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.lblModificarCategoria = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblCodigoSeleccionado = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreSeleccionado = new System.Windows.Forms.Label();
@@ -49,31 +47,11 @@
             this.lblModificarCategoria.TabIndex = 0;
             this.lblModificarCategoria.Text = "Modificar Categoria";
             // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(88, 79);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(66, 20);
-            this.lblCodigo.TabIndex = 1;
-            this.lblCodigo.Text = "Código:";
-            // 
-            // lblCodigoSeleccionado
-            // 
-            this.lblCodigoSeleccionado.AutoSize = true;
-            this.lblCodigoSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoSeleccionado.Location = new System.Drawing.Point(223, 79);
-            this.lblCodigoSeleccionado.Name = "lblCodigoSeleccionado";
-            this.lblCodigoSeleccionado.Size = new System.Drawing.Size(178, 20);
-            this.lblCodigoSeleccionado.TabIndex = 2;
-            this.lblCodigoSeleccionado.Text = "lblCodigoSeleccionado";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 117);
+            this.label1.Location = new System.Drawing.Point(33, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 3;
@@ -83,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 157);
+            this.label2.Location = new System.Drawing.Point(33, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 20);
             this.label2.TabIndex = 4;
@@ -93,7 +71,7 @@
             // 
             this.lblNombreSeleccionado.AutoSize = true;
             this.lblNombreSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreSeleccionado.Location = new System.Drawing.Point(223, 117);
+            this.lblNombreSeleccionado.Location = new System.Drawing.Point(227, 90);
             this.lblNombreSeleccionado.Name = "lblNombreSeleccionado";
             this.lblNombreSeleccionado.Size = new System.Drawing.Size(185, 20);
             this.lblNombreSeleccionado.TabIndex = 5;
@@ -101,7 +79,7 @@
             // 
             // txtNuevoNombre
             // 
-            this.txtNuevoNombre.Location = new System.Drawing.Point(227, 157);
+            this.txtNuevoNombre.Location = new System.Drawing.Point(231, 130);
             this.txtNuevoNombre.Name = "txtNuevoNombre";
             this.txtNuevoNombre.Size = new System.Drawing.Size(197, 22);
             this.txtNuevoNombre.TabIndex = 6;
@@ -109,7 +87,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(92, 218);
+            this.btnAceptar.Location = new System.Drawing.Point(96, 191);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(124, 31);
             this.btnAceptar.TabIndex = 7;
@@ -119,7 +97,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(227, 218);
+            this.btnCancelar.Location = new System.Drawing.Point(231, 191);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 31);
             this.btnCancelar.TabIndex = 8;
@@ -138,8 +116,6 @@
             this.Controls.Add(this.lblNombreSeleccionado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblCodigoSeleccionado);
-            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblModificarCategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "vistaModificarCategoria";
@@ -153,8 +129,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblModificarCategoria;
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Label lblCodigoSeleccionado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNombreSeleccionado;

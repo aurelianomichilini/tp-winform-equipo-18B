@@ -16,7 +16,6 @@ namespace TPWinForm_Equipo18B
 
         private void vistaModificarCategoria_Load(object sender, EventArgs e)
         {
-            lblCodigoSeleccionado.Text = categoriaSeleccionada.id.ToString();
             lblNombreSeleccionado.Text = categoriaSeleccionada.descripcion;
             txtNuevoNombre.Text = categoriaSeleccionada.descripcion;
         }
