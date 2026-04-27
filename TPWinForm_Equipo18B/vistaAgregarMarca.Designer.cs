@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm_Equipo18B
 {
-    partial class agregarMarca
+    partial class vistaAgregarMarca
     {
         /// <summary>
         /// Required designer variable.

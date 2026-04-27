@@ -54,7 +54,7 @@ namespace TPWinForm_Equipo18B
 
         private void btn_add_marca_Click(object sender, EventArgs e)
         {
-            agregarMarca ventana = new agregarMarca();
+            vistaAgregarMarca ventana = new vistaAgregarMarca();
 
             ventana.ShowDialog();
             CargarMarcas();
@@ -112,7 +112,7 @@ namespace TPWinForm_Equipo18B
                 if (DataGridMarca.CurrentRow != null)
                 {
                     Marca seleccionada = (Marca)DataGridMarca.CurrentRow.DataBoundItem;
-                    editarMarca ventana = new editarMarca(seleccionada);
+                    vistaModificarMarca ventana = new vistaModificarMarca(seleccionada);
                     ventana.ShowDialog();
                     CargarMarcas();
                 }

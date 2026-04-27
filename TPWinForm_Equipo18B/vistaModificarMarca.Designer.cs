@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm_Equipo18B
 {
-    partial class editarMarca
+    partial class vistaModificarMarca
     {
         /// <summary>
         /// Required designer variable.

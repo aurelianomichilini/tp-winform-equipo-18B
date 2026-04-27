@@ -7,43 +7,32 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TPWinForm_Equipo18B
 {
-    public partial class editarMarca : Form
+    public partial class vistaAgregarMarca : Form
     {
+        public vistaAgregarMarca()
+        {
+            InitializeComponent();
+        }
 
-        private Marca marca = null;
-        public editarMarca()
-        {
-            InitializeComponent();
-        }
-        public editarMarca(Marca marca)
-        {
-            InitializeComponent();
-            this.marca = marca;
-        }
-        private void btnsalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void editarMarca_Load(object sender, EventArgs e)
+        private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
-            txtboxDesc.Text = marca.descripcion; 
-        }
 
-        private void btnconfirmar_Click(object sender, EventArgs e)
-        {
-            Marca Marca = new Marca();
+            Marca nueva = new Marca();
             MarcaNegocio negocio = new MarcaNegocio();
 
             try
             {
-                string nuevoNombre = txtboxDesc.Text.Trim();
+                string nuevoNombre = textBoxAgregarMarca.Text.Trim();
                 if (string.IsNullOrWhiteSpace(nuevoNombre))
                 {
                     MessageBox.Show("Debe ingresar un nombre");
@@ -56,22 +45,27 @@ namespace TPWinForm_Equipo18B
                     return;
                 }
 
-                if (txtboxDesc.Text.Length > 50)
+                if (textBoxAgregarMarca.Text.Length > 50)
                 {
                     MessageBox.Show("El nombre es demasiado largo");
                     return;
                 }
-                marca.descripcion = txtboxDesc.Text;
 
-                negocio.editarMarca(marca);
-                MessageBox.Show("Marca modificada correctamente");
-                
+
+                nueva.descripcion = nuevoNombre;
+                negocio.agregarMarca(nueva);
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al modificar la marca: " + ex.Message);
+
+                throw ex;
             }
+
+
+
+
+
         }
     }
 }

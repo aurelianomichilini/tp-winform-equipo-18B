@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="agregarMarca.cs">
+    <Compile Include="vistaAgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="agregarMarca.Designer.cs">
-      <DependentUpon>agregarMarca.cs</DependentUpon>
+    <Compile Include="vistaAgregarMarca.Designer.cs">
+      <DependentUpon>vistaAgregarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="editarMarca.cs">
+    <Compile Include="vistaModificarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="editarMarca.Designer.cs">
-      <DependentUpon>editarMarca.cs</DependentUpon>
+    <Compile Include="vistaModificarMarca.Designer.cs">
+      <DependentUpon>vistaModificarMarca.cs</DependentUpon>
     </Compile>
     <Compile Include="vistaAgregarArticulo.cs">
       <SubType>Form</SubType>
@@ -103,11 +103,11 @@
     <Compile Include="vistaModificarCategoria.Designer.cs">
       <DependentUpon>vistaModificarCategoria.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="agregarMarca.resx">
-      <DependentUpon>agregarMarca.cs</DependentUpon>
+    <EmbeddedResource Include="vistaAgregarMarca.resx">
+      <DependentUpon>vistaAgregarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editarMarca.resx">
-      <DependentUpon>editarMarca.cs</DependentUpon>
+    <EmbeddedResource Include="vistaModificarMarca.resx">
+      <DependentUpon>vistaModificarMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
