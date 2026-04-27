@@ -84,7 +84,7 @@
             this.gridArticulos.RowHeadersVisible = false;
             this.gridArticulos.RowHeadersWidth = 51;
             this.gridArticulos.RowTemplate.Height = 24;
-            this.gridArticulos.Size = new System.Drawing.Size(759, 626);
+            this.gridArticulos.Size = new System.Drawing.Size(759, 687);
             this.gridArticulos.TabIndex = 2;
             this.gridArticulos.SelectionChanged += new System.EventHandler(this.gridArticulos_SelectionChanged);
             // 
@@ -156,7 +156,7 @@
             this.groupBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBuscar.Name = "groupBuscar";
             this.groupBuscar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBuscar.Size = new System.Drawing.Size(1327, 64);
+            this.groupBuscar.Size = new System.Drawing.Size(1201, 64);
             this.groupBuscar.TabIndex = 1;
             this.groupBuscar.TabStop = false;
             // 
@@ -201,7 +201,7 @@
             // 
             this.lblImagen.AutoSize = true;
             this.lblImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImagen.Location = new System.Drawing.Point(879, 655);
+            this.lblImagen.Location = new System.Drawing.Point(879, 737);
             this.lblImagen.Name = "lblImagen";
             this.lblImagen.Size = new System.Drawing.Size(57, 20);
             this.lblImagen.TabIndex = 35;
@@ -211,7 +211,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(879, 615);
+            this.lblCategoria.Location = new System.Drawing.Point(879, 688);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(81, 20);
             this.lblCategoria.TabIndex = 34;
@@ -221,7 +221,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(879, 576);
+            this.lblMarca.Location = new System.Drawing.Point(879, 642);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(56, 20);
             this.lblMarca.TabIndex = 33;
@@ -231,7 +231,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(879, 538);
+            this.lblDescripcion.Location = new System.Drawing.Point(879, 524);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(99, 20);
             this.lblDescripcion.TabIndex = 32;
@@ -241,7 +241,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(879, 500);
+            this.lblNombre.Location = new System.Drawing.Point(879, 475);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(68, 20);
             this.lblNombre.TabIndex = 31;
@@ -251,7 +251,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(879, 460);
+            this.lblCodigo.Location = new System.Drawing.Point(879, 418);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(61, 20);
             this.lblCodigo.TabIndex = 30;
@@ -259,7 +259,7 @@
             // 
             // pbImagenArticuloSeleccionado
             // 
-            this.pbImagenArticuloSeleccionado.Location = new System.Drawing.Point(934, 182);
+            this.pbImagenArticuloSeleccionado.Location = new System.Drawing.Point(979, 145);
             this.pbImagenArticuloSeleccionado.Margin = new System.Windows.Forms.Padding(4);
             this.pbImagenArticuloSeleccionado.Name = "pbImagenArticuloSeleccionado";
             this.pbImagenArticuloSeleccionado.Size = new System.Drawing.Size(305, 245);
@@ -269,7 +269,7 @@
             // 
             // btnModificarArticulo
             // 
-            this.btnModificarArticulo.Location = new System.Drawing.Point(980, 712);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(1029, 790);
             this.btnModificarArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(100, 28);
@@ -280,7 +280,7 @@
             // 
             // btnEliminarArticulo
             // 
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(1088, 712);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(1137, 790);
             this.btnEliminarArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(100, 28);
@@ -293,7 +293,8 @@
             // 
             this.lblCodigoArticuloSeleccionado.AutoSize = true;
             this.lblCodigoArticuloSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoArticuloSeleccionado.Location = new System.Drawing.Point(1054, 460);
+            this.lblCodigoArticuloSeleccionado.Location = new System.Drawing.Point(1054, 418);
+            this.lblCodigoArticuloSeleccionado.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblCodigoArticuloSeleccionado.Name = "lblCodigoArticuloSeleccionado";
             this.lblCodigoArticuloSeleccionado.Size = new System.Drawing.Size(235, 20);
             this.lblCodigoArticuloSeleccionado.TabIndex = 45;
@@ -303,7 +304,8 @@
             // 
             this.lblNombreArticuloSeleccionado.AutoSize = true;
             this.lblNombreArticuloSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreArticuloSeleccionado.Location = new System.Drawing.Point(1054, 500);
+            this.lblNombreArticuloSeleccionado.Location = new System.Drawing.Point(1054, 475);
+            this.lblNombreArticuloSeleccionado.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblNombreArticuloSeleccionado.Name = "lblNombreArticuloSeleccionado";
             this.lblNombreArticuloSeleccionado.Size = new System.Drawing.Size(242, 20);
             this.lblNombreArticuloSeleccionado.TabIndex = 46;
@@ -313,7 +315,8 @@
             // 
             this.lblDescripcionArticuloSeleccionado.AutoSize = true;
             this.lblDescripcionArticuloSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionArticuloSeleccionado.Location = new System.Drawing.Point(1054, 538);
+            this.lblDescripcionArticuloSeleccionado.Location = new System.Drawing.Point(1054, 524);
+            this.lblDescripcionArticuloSeleccionado.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblDescripcionArticuloSeleccionado.Name = "lblDescripcionArticuloSeleccionado";
             this.lblDescripcionArticuloSeleccionado.Size = new System.Drawing.Size(273, 20);
             this.lblDescripcionArticuloSeleccionado.TabIndex = 47;
@@ -323,7 +326,8 @@
             // 
             this.lblMarcaArticuloSeleccionado.AutoSize = true;
             this.lblMarcaArticuloSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcaArticuloSeleccionado.Location = new System.Drawing.Point(1054, 576);
+            this.lblMarcaArticuloSeleccionado.Location = new System.Drawing.Point(1054, 642);
+            this.lblMarcaArticuloSeleccionado.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblMarcaArticuloSeleccionado.Name = "lblMarcaArticuloSeleccionado";
             this.lblMarcaArticuloSeleccionado.Size = new System.Drawing.Size(230, 20);
             this.lblMarcaArticuloSeleccionado.TabIndex = 48;
@@ -333,7 +337,8 @@
             // 
             this.lblCategoriaArticuloSeleccionado.AutoSize = true;
             this.lblCategoriaArticuloSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaArticuloSeleccionado.Location = new System.Drawing.Point(1054, 615);
+            this.lblCategoriaArticuloSeleccionado.Location = new System.Drawing.Point(1054, 688);
+            this.lblCategoriaArticuloSeleccionado.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblCategoriaArticuloSeleccionado.Name = "lblCategoriaArticuloSeleccionado";
             this.lblCategoriaArticuloSeleccionado.Size = new System.Drawing.Size(255, 20);
             this.lblCategoriaArticuloSeleccionado.TabIndex = 49;
@@ -343,7 +348,8 @@
             // 
             this.lblPrecioArticuloSeleccionado.AutoSize = true;
             this.lblPrecioArticuloSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioArticuloSeleccionado.Location = new System.Drawing.Point(1058, 655);
+            this.lblPrecioArticuloSeleccionado.Location = new System.Drawing.Point(1058, 737);
+            this.lblPrecioArticuloSeleccionado.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblPrecioArticuloSeleccionado.Name = "lblPrecioArticuloSeleccionado";
             this.lblPrecioArticuloSeleccionado.Size = new System.Drawing.Size(231, 20);
             this.lblPrecioArticuloSeleccionado.TabIndex = 50;
@@ -351,7 +357,7 @@
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(895, 295);
+            this.btnAnterior.Location = new System.Drawing.Point(940, 258);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(32, 23);
             this.btnAnterior.TabIndex = 3;
@@ -361,7 +367,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(1246, 295);
+            this.btnSiguiente.Location = new System.Drawing.Point(1291, 258);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(32, 23);
             this.btnSiguiente.TabIndex = 4;
@@ -373,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1555, 804);
+            this.ClientSize = new System.Drawing.Size(1429, 854);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblPrecioArticuloSeleccionado);
