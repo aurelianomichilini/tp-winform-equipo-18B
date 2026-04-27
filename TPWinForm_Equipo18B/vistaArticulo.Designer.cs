@@ -117,6 +117,7 @@
             this.txtBoxBuscar.Name = "txtBoxBuscar";
             this.txtBoxBuscar.Size = new System.Drawing.Size(341, 22);
             this.txtBoxBuscar.TabIndex = 1;
+            this.txtBoxBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxBuscar_KeyDown);
             // 
             // btnBuscar
             // 
@@ -155,7 +156,7 @@
             this.groupBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBuscar.Name = "groupBuscar";
             this.groupBuscar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBuscar.Size = new System.Drawing.Size(1132, 64);
+            this.groupBuscar.Size = new System.Drawing.Size(1327, 64);
             this.groupBuscar.TabIndex = 1;
             this.groupBuscar.TabStop = false;
             // 
@@ -372,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1360, 804);
+            this.ClientSize = new System.Drawing.Size(1555, 804);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblPrecioArticuloSeleccionado);

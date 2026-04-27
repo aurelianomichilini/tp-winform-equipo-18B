@@ -98,6 +98,28 @@ namespace TPWinForm_Equipo18B
                             }
                         }
                         break;
+                    case "Precio menor a":
+                        decimal precioMenor;
+                        if (decimal.TryParse(busqueda, out precioMenor))
+                        {
+                            if (item.precio <= precioMenor)
+                                listaFiltrada.Add(item);
+                        }
+                        break;
+                    case "Código":
+                        if (item.codigo != null && item.codigo.ToLower().Contains(busqueda))
+                            listaFiltrada.Add(item);
+                        break;
+                    case "Descripción":
+                        if (item.descripcion != null && item.descripcion.ToLower().Contains(busqueda))
+                            listaFiltrada.Add(item);
+                        break;
+                    case "Categoría":
+                        if (item.IdCategoria != null &&
+                            item.IdCategoria.descripcion != null &&
+                            item.IdCategoria.descripcion.ToLower().Contains(busqueda))
+                            listaFiltrada.Add(item);
+                        break;
                 }
             }
 
@@ -331,6 +353,47 @@ namespace TPWinForm_Equipo18B
                 indiceImagen = listaImagenes.Count - 1;
 
             cargarImagen(listaImagenes[indiceImagen].imagenUrl);
+        }
+
+        private void txtBoxBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    string campo = cbbbusqueda.SelectedItem.ToString();
+                    string busqueda = txtBoxBuscar.Text.Trim();
+
+                    if (string.IsNullOrWhiteSpace(busqueda))
+                    {
+                        MessageBox.Show("Debe ingresar un valor para buscar.");
+                        return;
+                    }
+
+                    List<Articulo> listaFiltrada = filtrarArticulos(campo, busqueda);
+
+                    gridArticulos.DataSource = null;
+                    gridArticulos.DataSource = listaFiltrada;
+
+                    gridArticulos.Columns["idArticulo"].Visible = false;
+                    gridArticulos.Columns["codigo"].HeaderText = "Código";
+                    gridArticulos.Columns["nombre"].HeaderText = "Nombre";
+                    gridArticulos.Columns["descripcion"].HeaderText = "Descripción";
+                    gridArticulos.Columns["IdMarca"].HeaderText = "Marca";
+                    gridArticulos.Columns["IdCategoria"].HeaderText = "Categoría";
+                    gridArticulos.Columns["precio"].HeaderText = "Precio";
+
+                    if (listaFiltrada.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron artículos.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            }
         }
     }
 }
