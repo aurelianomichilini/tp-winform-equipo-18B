@@ -137,6 +137,31 @@ namespace TPWinForm_Equipo18B
 
             try
             {
+                if (txtDescripcion.Text.Length > 150)
+                {
+                    MessageBox.Show("La descripción no puede superar los 150 caracteres.");
+                    return;
+                }
+
+                if (txtNombre.Text.Length > 50)
+                {
+                    MessageBox.Show("El nombre no puede superar los 50 caracteres.");
+                    return;
+                }
+
+                if (txtCodigo.Text.Length > 50)
+                {
+                    MessageBox.Show("El código no puede superar los 50 caracteres.");
+                    return;
+                }
+
+                decimal precio;
+                if (!decimal.TryParse(txtPrecio.Text, out precio))
+                {
+                    MessageBox.Show("El precio debe ser un número válido.");
+                    return;
+                }
+
                 articulo.codigo = txtCodigo.Text;
                 articulo.nombre = txtNombre.Text;
                 articulo.descripcion = txtDescripcion.Text;

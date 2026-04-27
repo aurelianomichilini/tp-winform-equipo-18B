@@ -211,7 +211,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(879, 688);
+            this.lblCategoria.Location = new System.Drawing.Point(879, 704);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(81, 20);
             this.lblCategoria.TabIndex = 34;
@@ -221,7 +221,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(879, 642);
+            this.lblMarca.Location = new System.Drawing.Point(879, 675);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(56, 20);
             this.lblMarca.TabIndex = 33;
@@ -326,7 +326,7 @@
             // 
             this.lblMarcaArticuloSeleccionado.AutoSize = true;
             this.lblMarcaArticuloSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcaArticuloSeleccionado.Location = new System.Drawing.Point(1054, 642);
+            this.lblMarcaArticuloSeleccionado.Location = new System.Drawing.Point(1054, 675);
             this.lblMarcaArticuloSeleccionado.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblMarcaArticuloSeleccionado.Name = "lblMarcaArticuloSeleccionado";
             this.lblMarcaArticuloSeleccionado.Size = new System.Drawing.Size(230, 20);
@@ -337,7 +337,7 @@
             // 
             this.lblCategoriaArticuloSeleccionado.AutoSize = true;
             this.lblCategoriaArticuloSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaArticuloSeleccionado.Location = new System.Drawing.Point(1054, 688);
+            this.lblCategoriaArticuloSeleccionado.Location = new System.Drawing.Point(1054, 704);
             this.lblCategoriaArticuloSeleccionado.MaximumSize = new System.Drawing.Size(300, 0);
             this.lblCategoriaArticuloSeleccionado.Name = "lblCategoriaArticuloSeleccionado";
             this.lblCategoriaArticuloSeleccionado.Size = new System.Drawing.Size(255, 20);
