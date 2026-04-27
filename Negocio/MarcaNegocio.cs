@@ -83,17 +83,20 @@ namespace Negocio
                 datos.closeConnection();
             }
         }
-
-        public void editarMarca(Marca Marca)
+        public bool marcaConAritucloAsociado(int id)
         {
             dbAccess datos = new dbAccess();
 
             try
             {
-                datos.setQuery("UPDATE MARCAS SET Descripcion = @Descripcion WHERE Id = @Id");
-                datos.setParameter("@Descripcion", Marca.descripcion);
-                datos.setParameter("@Id", Marca.id);
-                datos.executeAction();
+                datos.setQuery("SELECT Id FROM ARTICULOS WHERE IdMarca = @id");
+                datos.setParameter("@id", id);
+                datos.executeRead();
+
+                if (datos.Reader.Read())
+                    return true;
+
+                return false;
             }
             catch (Exception ex)
             {
@@ -104,6 +107,7 @@ namespace Negocio
                 datos.closeConnection();
             }
         }
+
         public bool existeMarca(string descripcion)
         {
             dbAccess datos = new dbAccess();
@@ -128,5 +132,27 @@ namespace Negocio
                 datos.closeConnection();
             }
         }
+
+        public void editarMarca(Marca Marca)
+        {
+            dbAccess datos = new dbAccess();
+
+            try
+            {
+                datos.setQuery("UPDATE MARCAS SET Descripcion = @Descripcion WHERE Id = @Id");
+                datos.setParameter("@Descripcion", Marca.descripcion);
+                datos.setParameter("@Id", Marca.id);
+                datos.executeAction();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                datos.closeConnection();
+            }
+        }
+        
     }
 }

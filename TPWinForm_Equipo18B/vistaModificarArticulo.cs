@@ -137,25 +137,76 @@ namespace TPWinForm_Equipo18B
 
             try
             {
+                decimal precio;
+                Marca marcaSeleccionada = (Marca)cboMarca.SelectedItem;
+                Categoria categoriaSeleccionada = (Categoria)cboCategoria.SelectedItem;
+
+                if (string.IsNullOrWhiteSpace(txtCodigo.Text))
+                {
+                    MessageBox.Show("Debe ingresar un código");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    MessageBox.Show("Debe ingresar un nombre");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+                {
+                    MessageBox.Show("Debe ingresar una descripción");
+                    return;
+                }
+
+                if (cboMarca.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una marca");
+                    return;
+                }
+
+                if (cboCategoria.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar una categoría");
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+                {
+                    MessageBox.Show("Debe ingresar un precio");
+                    return;
+                }
+
+                if (!decimal.TryParse(txtPrecio.Text, out precio))
+                {
+                    MessageBox.Show("El precio debe ser numérico");
+                    return;
+                }
+
+                if (precio < 0)
+                {
+                    MessageBox.Show("El precio no puede ser negativo");
+                    return;
+                }
+
+                if (negocio.existeMarcaCategoriaArticulo(txtNombre.Text.Trim(), marcaSeleccionada.id, categoriaSeleccionada.id,articulo.idArticulo))
+                {
+                    MessageBox.Show("Ya existe un artículo con ese nombre para esa marca y categoría");
+                    return;
+                }
+
                 if (txtDescripcion.Text.Length > 150)
                 {
-                    MessageBox.Show("La descripción no puede superar los 150 caracteres.");
+                    MessageBox.Show("La descripción no puede superar los 150 caracteres");
                     return;
                 }
 
                 if (txtNombre.Text.Length > 50)
                 {
-                    MessageBox.Show("El nombre no puede superar los 50 caracteres.");
+                    MessageBox.Show("El nombre no puede superar los 50 caracteres");
                     return;
                 }
 
-                if (txtCodigo.Text.Length > 50)
-                {
-                    MessageBox.Show("El código no puede superar los 50 caracteres.");
-                    return;
-                }
-
-                decimal precio;
                 if (!decimal.TryParse(txtPrecio.Text, out precio))
                 {
                     MessageBox.Show("El precio debe ser un número válido.");

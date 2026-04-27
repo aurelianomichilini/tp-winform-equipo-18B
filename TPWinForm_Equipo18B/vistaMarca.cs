@@ -63,12 +63,18 @@ namespace TPWinForm_Equipo18B
         private void btn_eliminar_marca_Click(object sender, EventArgs e)
         {
             MarcaNegocio negocio = new MarcaNegocio();
-
+            Marca seleccionada = (Marca)DataGridMarca.CurrentRow.DataBoundItem;
             try
             {
-                if (DataGridMarca.CurrentRow != null)
+
+
+                if (negocio.marcaConAritucloAsociado(seleccionada.id))
                 {
-                    Marca seleccionada = (Marca)DataGridMarca.CurrentRow.DataBoundItem;
+                    MessageBox.Show("No se puede eliminar la categoría porque está asociada a uno o más artículos");
+                    return;
+                } else if (DataGridMarca.CurrentRow != null)
+                 {
+                    
 
                     DialogResult respuesta = MessageBox.Show(
                         "¿Querés eliminar la marca seleccionada?",
@@ -82,7 +88,7 @@ namespace TPWinForm_Equipo18B
                         MessageBox.Show("Marca eliminada correctamente");
                         CargarMarcas();
                     }
-                }
+                 }
                 else
                 {
                     MessageBox.Show("Seleccioná una marca primero");
