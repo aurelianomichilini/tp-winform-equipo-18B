@@ -169,7 +169,7 @@ namespace TPWinForm_Equipo18B
                 }
                 else
                 {
-                    MessageBox.Show("Seleccioná una marca primero");
+                    MessageBox.Show("Seleccioná un articulo primero");
                 }
             }
             catch (Exception ex)

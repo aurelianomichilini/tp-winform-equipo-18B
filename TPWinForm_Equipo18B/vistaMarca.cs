@@ -189,5 +189,10 @@ namespace TPWinForm_Equipo18B
             CargarMarcas();
             txtbuscarmarca.Clear();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

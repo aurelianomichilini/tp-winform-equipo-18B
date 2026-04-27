@@ -35,8 +35,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.groupBuscar = new System.Windows.Forms.GroupBox();
-            this.gridCategorias = new System.Windows.Forms.DataGridView();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.gridCategorias = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
             this.groupBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCategorias)).BeginInit();
@@ -46,17 +46,19 @@
             // 
             this.lblCategorias.AutoSize = true;
             this.lblCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategorias.Location = new System.Drawing.Point(16, 19);
+            this.lblCategorias.Location = new System.Drawing.Point(12, 15);
+            this.lblCategorias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategorias.Name = "lblCategorias";
-            this.lblCategorias.Size = new System.Drawing.Size(135, 29);
+            this.lblCategorias.Size = new System.Drawing.Size(107, 25);
             this.lblCategorias.TabIndex = 0;
             this.lblCategorias.Text = "Categorias";
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(18, 66);
+            this.btnAgregar.Location = new System.Drawing.Point(14, 54);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(132, 36);
+            this.btnAgregar.Size = new System.Drawing.Size(99, 29);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "+ Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(156, 66);
+            this.btnModificar.Location = new System.Drawing.Point(117, 54);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(132, 36);
+            this.btnModificar.Size = new System.Drawing.Size(99, 29);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(294, 66);
+            this.btnEliminar.Location = new System.Drawing.Point(220, 54);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(132, 36);
+            this.btnEliminar.Size = new System.Drawing.Size(99, 29);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -84,9 +88,10 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(203, 15);
+            this.btnBuscar.Location = new System.Drawing.Point(152, 12);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(118, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(88, 24);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -94,9 +99,10 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(14, 18);
+            this.txtBuscar.Location = new System.Drawing.Point(10, 15);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(183, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(138, 20);
             this.txtBuscar.TabIndex = 5;
             this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
@@ -105,41 +111,46 @@
             this.groupBuscar.Controls.Add(this.btnLimpiar);
             this.groupBuscar.Controls.Add(this.txtBuscar);
             this.groupBuscar.Controls.Add(this.btnBuscar);
-            this.groupBuscar.Location = new System.Drawing.Point(440, 58);
+            this.groupBuscar.Location = new System.Drawing.Point(330, 47);
+            this.groupBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBuscar.Name = "groupBuscar";
-            this.groupBuscar.Size = new System.Drawing.Size(459, 54);
+            this.groupBuscar.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBuscar.Size = new System.Drawing.Size(344, 44);
             this.groupBuscar.TabIndex = 6;
             this.groupBuscar.TabStop = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(245, 12);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(88, 24);
+            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // gridCategorias
             // 
             this.gridCategorias.AllowUserToAddRows = false;
             this.gridCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCategorias.Location = new System.Drawing.Point(20, 130);
+            this.gridCategorias.Location = new System.Drawing.Point(15, 106);
+            this.gridCategorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridCategorias.Name = "gridCategorias";
             this.gridCategorias.ReadOnly = true;
             this.gridCategorias.RowHeadersVisible = false;
             this.gridCategorias.RowHeadersWidth = 51;
             this.gridCategorias.RowTemplate.Height = 24;
-            this.gridCategorias.Size = new System.Drawing.Size(879, 254);
+            this.gridCategorias.Size = new System.Drawing.Size(659, 206);
             this.gridCategorias.TabIndex = 7;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(327, 15);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(118, 29);
-            this.btnLimpiar.TabIndex = 6;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(767, 400);
+            this.btnVolver.Location = new System.Drawing.Point(575, 325);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(132, 36);
+            this.btnVolver.Size = new System.Drawing.Size(99, 29);
             this.btnVolver.TabIndex = 9;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -147,9 +158,9 @@
             // 
             // vistaCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 471);
+            this.ClientSize = new System.Drawing.Size(700, 383);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gridCategorias);
             this.Controls.Add(this.groupBuscar);
@@ -158,6 +169,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblCategorias);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "vistaCategorias";
             this.Text = "Categoría";
             this.Load += new System.EventHandler(this.vistaCategorias_Load);

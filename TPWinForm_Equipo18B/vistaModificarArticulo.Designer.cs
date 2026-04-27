@@ -216,6 +216,7 @@
             this.DatagridImagen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatagridImagen.Location = new System.Drawing.Point(76, 297);
             this.DatagridImagen.Name = "DatagridImagen";
+            this.DatagridImagen.ReadOnly = true;
             this.DatagridImagen.Size = new System.Drawing.Size(702, 150);
             this.DatagridImagen.TabIndex = 32;
             // 
